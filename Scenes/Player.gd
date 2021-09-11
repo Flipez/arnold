@@ -5,6 +5,7 @@ export var ACCELERATION = 500
 export var MAX_SPEED = 80
 
 var velocity = Vector2.ZERO
+var input_vector = Vector2.ZERO
 
 enum {
   MOVE,
@@ -14,8 +15,8 @@ enum {
 
 export var state = MOVE
 
-onready var interactionTimer = $Area2D/InteractionTimer
-onready var interactionArea = $Area2D/InteractionArea
+#onready var interactionTimer = $Area2D/InteractionTimer
+onready var interactionArea = $InteractionArea/InteractionShape
 onready var playerSprite = $Sprite
 
 func _ready():
@@ -29,9 +30,15 @@ func _physics_process(delta):
       interact_state()
     DIALOG:
       dialog_state()
+      
+  if Input.is_action_pressed("ui_select"):
+    interactionArea.disabled = false
+  else:
+    interactionArea.disabled = true
+  
   
 func move_state(delta):
-  var input_vector = Vector2.ZERO
+  # set the strength of rotation depending on the users input
   rotation_degrees += Input.get_action_strength("ui_right") * 2
   rotation_degrees -= Input.get_action_strength("ui_left") * 2
 
@@ -60,33 +67,36 @@ func move_state(delta):
   #  interactionTimer.start(0.15)
   
 func move():
- velocity = move_and_slide(velocity)
+  velocity = move_and_slide(velocity)
+
 
 func interact_state():
   velocity = Vector2.ZERO
   interactionArea.disabled = false
+
+  
+func dialog_state():
+  velocity = Vector2.ZERO
+  
+#func freeze(_dialog = "", _caller = "", _on_exit_signal = ""):
+#  interactionTimer.stop()
+#  call_deferred("disable_interaction")
+#  state = DIALOG
+  
+#func unfreeze(_value = ""):
+#  state = MOVE
+
+func disable_interaction():
+  interactionArea.disabled = true
+
+func invisible():
+  $Sprite.hide()
 
 
 func _on_InteractionTimer_timeout():
   state = MOVE
   interactionArea.disabled = true
 
-func _on_Area2D_area_entered(area):
-  area.interact(self)
-  
-func dialog_state():
-  velocity = Vector2.ZERO
-  
-func freeze(_dialog = "", _caller = "", _on_exit_signal = ""):
-  interactionTimer.stop()
-  call_deferred("disable_interaction")
-  state = DIALOG
-  
-func unfreeze(_value = ""):
-  state = MOVE
 
-func disable_interaction():
-  interactionArea.disabled = true
-
-func invisible():
-    $Sprite.hide()
+func _on_interactionArea_area_entered(area):
+  pass
