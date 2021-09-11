@@ -5,6 +5,7 @@ var hold_by_player = false
 var player = null
 export var never_touched = true
 
+signal destroyed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,14 +19,14 @@ func _process(delta):
   if hold_by_player:
     stick_to_player(delta)
   if never_touched == false && hold_by_player == false && out_of_play_area():
-    queue_free()
+    destroy()
 
 
 func move_on_belt(delta):
   if position.x == 192 && position.y <= 56:
     position.y += SPEED * delta
   elif position.y == 248 && position.x >= 272:
-    queue_free()
+    destroy()
   elif position.y >= 248 && position.x <= 272:
     position.y = 248
     position.x += SPEED * delta
@@ -55,3 +56,8 @@ func _on_InteractionArea_area_exited(_area):
   hold_by_player = false
   $CrateDropPlayer.play()
   pass
+
+func destroy():
+  print("destroyed")
+  emit_signal("destroyed")
+  queue_free()

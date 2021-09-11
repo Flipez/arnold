@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Objects/Crate/Crate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Belt/belt.png" type="Texture" id=4]
 [ext_resource path="res://Objects/Belt/belt_corner.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/bubbles.png" type="Texture" id=6]
@@ -14,6 +13,7 @@
 [ext_resource path="res://Sprites/bubblecorner_1.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/bubblecorner_2.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/shitbar.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/MainLevel.gd" type="Script" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "bg.png 0"
@@ -209,7 +209,7 @@ animations = [ {
 3/z_index = 0
 
 [node name="MainLevel" type="Node2D"]
-script = ExtResource( 9 )
+script = ExtResource( 15 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 40, 72 )
@@ -490,17 +490,10 @@ tile_data = PoolIntArray( 65535, 1610612737, 0, 0, 1610612737, 0, 1, 1610612737,
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 226.38, 85.5949 )
 
-[node name="Crate" parent="." instance=ExtResource( 3 )]
-position = Vector2( 192, -8 )
-
-[node name="Crate2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 160, 144 )
-never_touched = false
-
 [node name="CrateSpawnerTimer" type="Timer" parent="."]
 wait_time = 10.0
 
-[node name="shitbar" type="Control" parent="."]
+[node name="Shitbar" type="Control" parent="."]
 margin_left = 234.0
 margin_top = 242.0
 margin_right = 367.0
@@ -510,7 +503,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="shitbar"]
+[node name="TextureRect" type="TextureRect" parent="Shitbar"]
 margin_left = 16.3635
 margin_top = 1.37909
 margin_right = 32.3636
@@ -520,7 +513,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="shitbar"]
+[node name="TextureProgress" type="TextureProgress" parent="Shitbar"]
 margin_left = 35.9591
 margin_top = 0.983261
 margin_right = 131.959
