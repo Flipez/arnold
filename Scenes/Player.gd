@@ -15,7 +15,6 @@ enum {
 
 export var state = MOVE
 
-#onready var interactionTimer = $Area2D/InteractionTimer
 onready var interactionArea = $InteractionArea/InteractionShape
 onready var playerSprite = $Sprite
 
@@ -42,7 +41,6 @@ func move_state(delta):
   rotation_degrees += Input.get_action_strength("ui_right") * 2
   rotation_degrees -= Input.get_action_strength("ui_left") * 2
 
-  #input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
   input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
   input_vector = input_vector.normalized()
 
@@ -52,19 +50,6 @@ func move_state(delta):
     velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
   move()
-  
-  #if input_vector.x > 0:
-  #  playerSprite.flip_h = false
-  #  playerSprite.offset.x = 20
-  #  interactionArea.position.x = 2
-  #elif input_vector.x < 0:
-  #  playerSprite.flip_h = true
-  #  playerSprite.offset.x = -20
-  #  interactionArea.position.x = -18
-  
-  #if Input.is_action_just_pressed("ui_interact") && state == MOVE:
-  #  state = INTERACT
-  #  interactionTimer.start(0.15)
   
 func move():
   velocity = move_and_slide(velocity)
@@ -77,14 +62,6 @@ func interact_state():
   
 func dialog_state():
   velocity = Vector2.ZERO
-  
-#func freeze(_dialog = "", _caller = "", _on_exit_signal = ""):
-#  interactionTimer.stop()
-#  call_deferred("disable_interaction")
-#  state = DIALOG
-  
-#func unfreeze(_value = ""):
-#  state = MOVE
 
 func disable_interaction():
   interactionArea.disabled = true
@@ -92,11 +69,9 @@ func disable_interaction():
 func invisible():
   $Sprite.hide()
 
-
 func _on_InteractionTimer_timeout():
   state = MOVE
   interactionArea.disabled = true
-
 
 func _on_interactionArea_area_entered(area):
   pass
