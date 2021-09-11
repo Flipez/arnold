@@ -37,7 +37,7 @@ func move_on_belt(delta):
     position.x -= SPEED * delta
 
 
-func stick_to_player(delta):
+func stick_to_player(_delta):
   position.x = player.position.x + cos(player.rotation - PI/2) * 13
   position.y = player.position.y + sin(player.rotation - PI/2) * 13
   look_at(player.position)
@@ -51,7 +51,7 @@ func _on_InteractionArea_area_entered(area):
   player = area.get_parent()
   $CratePickupPlayer.play()
 
-func _on_InteractionArea_area_exited(area):
+func _on_InteractionArea_area_exited(_area):
   hold_by_player = false
   $CrateDropPlayer.play()
   pass
