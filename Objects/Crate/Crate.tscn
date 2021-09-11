@@ -70,7 +70,6 @@ visible = false
 position = Vector2( -1.13249e-06, 0.0525572 )
 scale = Vector2( 0.684664, 0.684664 )
 frames = SubResource( 7 )
-playing = true
 
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_InteractionArea_area_entered"]
 [connection signal="area_exited" from="InteractionArea" to="." method="_on_InteractionArea_area_exited"]
