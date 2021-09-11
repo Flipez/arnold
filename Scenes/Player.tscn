@@ -70,7 +70,9 @@ radius = 5.80787
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 9.43851, 3.61722 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"players",
+]]
 position = Vector2( 0, 7.62939e-06 )
 script = ExtResource( 2 )
 

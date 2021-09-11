@@ -6,6 +6,7 @@ var player = null
 export var never_touched = true
 
 signal destroyed
+signal collected
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,23 +24,28 @@ func _process(delta):
   else:
     $ContentAnimatedSprite.visible = false
     $Sprite.visible = true
+    for body in $InteractionArea.get_overlapping_areas():
+      if body.get_parent().is_in_group("tubes"):
+        collect()
+     # for body in 
+      #if body.name == "Player" and Input.is_action_just_pressed("jump"):
   if never_touched == false && hold_by_player == false && out_of_play_area():
     destroy()
 
 
 func move_on_belt(delta):
-  if position.x == 200 && position.y <= 56:
+  if position.x == 200 && position.y <= 48:
     position.y += SPEED * delta
-  elif position.y == 248 && position.x >= 252:
+  elif position.y == 224 && position.x >= 252:
     destroy()
-  elif position.y >= 248 && position.x <= 272:
-    position.y = 248
+  elif position.y >= 224 && position.x <= 252:
+    position.y = 224
     position.x += SPEED * delta
-  elif position.x <= 24 && position.y < 248:
+  elif position.x <= 24 && position.y < 224:
     position.x = 24
     position.y += SPEED * delta
-  elif position.y >= 56 && position.x > 24:
-    position.y = 56
+  elif position.y >= 48 && position.x > 24:
+    position.y = 48
     position.x -= SPEED * delta
 
 
@@ -52,10 +58,11 @@ func out_of_play_area():
   return(position.y < 72 || position.y > 232 || position.x < 40 || position.x > 350)
 
 func _on_InteractionArea_area_entered(area):
-  hold_by_player = true
-  never_touched = false
-  player = area.get_parent()
-  $CratePickupPlayer.play()
+  if area.get_parent().is_in_group("players"):
+    hold_by_player = true
+    never_touched = false
+    player = area.get_parent()
+    $CratePickupPlayer.play()
 
 func _on_InteractionArea_area_exited(_area):
   hold_by_player = false
@@ -65,4 +72,8 @@ func _on_InteractionArea_area_exited(_area):
 func destroy():
   print("destroyed")
   emit_signal("destroyed")
+  queue_free()
+  
+func collect():
+  emit_signal("collected")
   queue_free()

@@ -36,11 +36,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Crate" type="StaticBody2D"]
+[node name="Crate" type="StaticBody2D" groups=[
+"collectables",
+]]
 collision_layer = 33
 collision_mask = 33
 script = ExtResource( 2 )
-SPEED = 3
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.7, 0.7 )
@@ -50,7 +51,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="InteractionArea" type="Area2D" parent="."]
-collision_layer = 32
+collision_layer = 96
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
@@ -69,7 +70,6 @@ visible = false
 position = Vector2( -1.13249e-06, 0.0525572 )
 scale = Vector2( 0.684664, 0.684664 )
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_InteractionArea_area_entered"]
