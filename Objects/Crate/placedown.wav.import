@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/placedown.wav-e0ddbc711ed48e2c2907d47b9b0a2e40.sample"
+
+[deps]
+
+source_file="res://Objects/Crate/placedown.wav"
+dest_files=[ "res://.import/placedown.wav-e0ddbc711ed48e2c2907d47b9b0a2e40.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

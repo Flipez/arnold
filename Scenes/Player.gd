@@ -17,7 +17,7 @@ enum {
 export var state = MOVE
 
 onready var interactionArea = $InteractionArea/InteractionShape
-onready var playerSprite = $Sprite
+onready var playerSprite = $AnimatedSprite
 
 func _ready():
   pass
@@ -84,10 +84,10 @@ func _on_InteractionTimer_timeout():
   state = MOVE
   interactionArea.disabled = true
 
-func _on_interactionArea_area_entered(area):
+func _on_interactionArea_area_entered(_area):
   is_holding_crate = true
 
 
-func _on_InteractionArea_area_exited(area):
+func _on_InteractionArea_area_exited(_area):
   is_holding_crate = false
 
