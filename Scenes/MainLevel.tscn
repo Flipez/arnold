@@ -593,13 +593,6 @@ position = Vector2( 192, 0 )
 
 [node name="Crates" type="Node2D" parent="."]
 
-[node name="Crates" type="Node2D" parent="."]
-position = Vector2( 192, 8 )
-
-[node name="Crate" parent="Crates" instance=ExtResource( 5 )]
-position = Vector2( -56, 136 )
-never_touched = false
-
 [node name="skin_overlay" type="TileMap" parent="."]
 rotation = 0.00121777
 tile_set = SubResource( 15 )
