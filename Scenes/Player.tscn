@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/player_a.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
@@ -35,12 +35,33 @@ region = Rect2( 96, 0, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 112, 0, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
+}, {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "holding",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=10]
@@ -54,9 +75,11 @@ position = Vector2( 0, 7.62939e-06 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -58.2486, 21.9982 )
 frames = SubResource( 9 )
-frame = 4
+frame = 5
 playing = true
+offset = Vector2( 58.2486, -21.9982 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.0398848, 0.178554 )
@@ -77,4 +100,5 @@ shape = SubResource( 11 )
 disabled = true
 
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interactionArea_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_InteractionArea_area_exited"]
 [connection signal="timeout" from="InteractionArea/InteractionTimer" to="." method="_on_InteractionTimer_timeout"]
