@@ -78,7 +78,7 @@ script = ExtResource( 2 )
 position = Vector2( -58.2486, 21.9982 )
 frames = SubResource( 13 )
 animation = "holding"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 58.2486, -21.9982 )
 
