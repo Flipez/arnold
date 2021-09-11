@@ -21,6 +21,7 @@
 [ext_resource path="res://Sprites/tube_entrance.png" type="Texture" id=23]
 [ext_resource path="res://Objects/brain.png" type="Texture" id=24]
 [ext_resource path="res://Sprites/tube.png" type="Texture" id=25]
+[ext_resource path="res://Objects/Crate/coffee_cup.png" type="Texture" id=26]
 
 [sub_resource type="TileSet" id=1]
 0/name = "bg.png 0"
