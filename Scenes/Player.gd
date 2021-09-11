@@ -6,6 +6,7 @@ export var MAX_SPEED = 80
 
 var velocity = Vector2.ZERO
 var input_vector = Vector2.ZERO
+var is_holding_crate = false
 
 enum {
   MOVE,
@@ -23,6 +24,7 @@ func _ready():
   pass
 
 func _physics_process(delta):
+  set_animation()
   match state:
     MOVE:
       move_state(delta)
@@ -35,6 +37,9 @@ func _physics_process(delta):
     interactionArea.disabled = false
   else:
     interactionArea.disabled = true
+  
+
+  
   
   
 func move_state(delta):
@@ -93,10 +98,22 @@ func invisible():
   $Sprite.hide()
 
 
+func set_animation():
+  if is_holding_crate:
+    $AnimatedSprite.play("holding")
+  else:
+    $AnimatedSprite.play("default")
+
+
 func _on_InteractionTimer_timeout():
   state = MOVE
   interactionArea.disabled = true
 
 
 func _on_interactionArea_area_entered(area):
-  pass
+  is_holding_crate = true
+
+
+func _on_InteractionArea_area_exited(area):
+  is_holding_crate = false
+
