@@ -49,8 +49,9 @@ func _on_InteractionArea_area_entered(area):
   hold_by_player = true
   never_touched = false
   player = area.get_parent()
+  $CratePickupPlayer.play()
 
 func _on_InteractionArea_area_exited(area):
   hold_by_player = false
-  $CreateDropPlayer.play()
+  $CrateDropPlayer.play()
   pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Sprites/bubbles.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/skin.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/bg_16.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/MainLevel.gd" type="Script" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "bg.png 0"
@@ -127,6 +128,7 @@ animations = [ {
 } ]
 
 [node name="MainLevel" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 40, 72 )
@@ -429,3 +431,8 @@ position = Vector2( 192, -8 )
 [node name="Crate2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 160, 144 )
 never_touched = false
+
+[node name="CrateSpawnerTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="CrateSpawnerTimer" to="." method="_on_CrateSpawnerTimer_timeout"]
