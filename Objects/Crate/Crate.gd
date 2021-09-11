@@ -32,23 +32,18 @@ func _ready():
     0,1,2,3:
       type_id = types.AIR
       $ContentAnimatedSprite.play("air")
-      pass
     4,5,6:
       type_id = types.BANANA
       $ContentAnimatedSprite.play("banana")
-      pass
     7,8:
       type_id = types.CHOCOLATE
       $ContentAnimatedSprite.play("chocolate")
-      pass
     9:
       type_id = types.COFFEE
       $ContentAnimatedSprite.play("coffee")
-      pass
     10:
       type_id = types.BEER
       $ContentAnimatedSprite.play("beer")
-      pass
 
 func _process(delta):
   if never_touched:
