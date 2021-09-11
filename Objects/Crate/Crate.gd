@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-export var SPEED = 3
+export var SPEED = 80
 var hold_by_player = false
 var player = null
 export var never_touched = true
@@ -10,7 +10,7 @@ signal destroyed
 # Called when the node enters the scene tree for the first time.
 func _ready():
   if never_touched:
-    position.x = 192
+    position.x = 200
     position.y = -8
 
 func _process(delta):
@@ -23,17 +23,17 @@ func _process(delta):
 
 
 func move_on_belt(delta):
-  if position.x == 192 && position.y <= 56:
+  if position.x == 200 && position.y <= 56:
     position.y += SPEED * delta
-  elif position.y == 248 && position.x >= 272:
+  elif position.y == 248 && position.x >= 252:
     destroy()
   elif position.y >= 248 && position.x <= 272:
     position.y = 248
     position.x += SPEED * delta
-  elif position.x <= 16 && position.y < 248:
-    position.x = 16
+  elif position.x <= 24 && position.y < 248:
+    position.x = 24
     position.y += SPEED * delta
-  elif position.y >= 56 && position.x > 16:
+  elif position.y >= 56 && position.x > 24:
     position.y = 56
     position.x -= SPEED * delta
 

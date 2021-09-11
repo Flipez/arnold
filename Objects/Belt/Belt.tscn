@@ -1,0 +1,317 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Objects/Belt/belt_corner.png" type="Texture" id=1]
+[ext_resource path="res://Objects/Belt/belt_spriteframes.tres" type="SpriteFrames" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Belt" type="StaticBody2D"]
+position = Vector2( 192, 8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 8.00003, 3.05176e-05 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 8.00003, 16 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 8, 48 )
+rotation = 4.71239
+frames = SubResource( 9 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+position = Vector2( 8.00003, 32 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
+position = Vector2( -7.99997, 48 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
+position = Vector2( -24, 48 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="."]
+position = Vector2( -40, 48 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="."]
+position = Vector2( -56, 48 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="."]
+position = Vector2( -72, 48 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="."]
+position = Vector2( -88, 48 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite11" type="AnimatedSprite" parent="."]
+position = Vector2( -104, 48 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite12" type="AnimatedSprite" parent="."]
+position = Vector2( -120, 48 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite13" type="AnimatedSprite" parent="."]
+position = Vector2( -136, 48 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite14" type="AnimatedSprite" parent="."]
+position = Vector2( -152, 48 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite15" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 48 )
+rotation = 4.71239
+frames = SubResource( 14 )
+flip_h = true
+flip_v = true
+
+[node name="AnimatedSprite16" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 64 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite17" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 80 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite18" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 96 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite19" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 112 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite20" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 128 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite21" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 144 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite22" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 160 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite23" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 176 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite24" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 192 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite25" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 208 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite26" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 224 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+
+[node name="AnimatedSprite27" type="AnimatedSprite" parent="."]
+position = Vector2( -168, 240 )
+rotation = 4.71239
+frames = SubResource( 19 )
+flip_v = true
+
+[node name="AnimatedSprite28" type="AnimatedSprite" parent="."]
+position = Vector2( -152, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite29" type="AnimatedSprite" parent="."]
+position = Vector2( -136, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite30" type="AnimatedSprite" parent="."]
+position = Vector2( -120, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite31" type="AnimatedSprite" parent="."]
+position = Vector2( -104, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite32" type="AnimatedSprite" parent="."]
+position = Vector2( -88, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite33" type="AnimatedSprite" parent="."]
+position = Vector2( -72, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite34" type="AnimatedSprite" parent="."]
+position = Vector2( -55.9999, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite35" type="AnimatedSprite" parent="."]
+position = Vector2( -39.9999, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite36" type="AnimatedSprite" parent="."]
+position = Vector2( -24, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite37" type="AnimatedSprite" parent="."]
+position = Vector2( -7.99997, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite38" type="AnimatedSprite" parent="."]
+position = Vector2( 8.00009, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite39" type="AnimatedSprite" parent="."]
+position = Vector2( 24.0001, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite40" type="AnimatedSprite" parent="."]
+position = Vector2( 40.0001, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
+
+[node name="AnimatedSprite41" type="AnimatedSprite" parent="."]
+position = Vector2( 56.0001, 240 )
+rotation = 3.14159
+frames = ExtResource( 2 )
+flip_h = true
