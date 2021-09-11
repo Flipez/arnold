@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chocolate.png-26aaa989949a12b149acbd8c561efc51.stex"
+path="res://.import/skin_sheet.png-e4072a59e235d2cf17911824dd5c095d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/chocolate.png"
-dest_files=[ "res://.import/chocolate.png-26aaa989949a12b149acbd8c561efc51.stex" ]
+source_file="res://Sprites/skin_sheet.png"
+dest_files=[ "res://.import/skin_sheet.png-e4072a59e235d2cf17911824dd5c095d.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

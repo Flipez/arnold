@@ -4,7 +4,7 @@
 [ext_resource path="res://Objects/Crate/Crate.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Crate/placedown.wav" type="AudioStream" id=3]
 [ext_resource path="res://Objects/Crate/pickup.wav" type="AudioStream" id=4]
-[ext_resource path="res://Objects/coffee_cup.png" type="Texture" id=5]
+[ext_resource path="res://Objects/Crate/coffee_cup.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.6731, 5.69607 )
@@ -12,25 +12,25 @@ extents = Vector2( 5.6731, 5.69607 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 5.64748, 5.625 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 5 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
 region = Rect2( 48, 0, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -69,6 +69,7 @@ visible = false
 position = Vector2( -1.13249e-06, 0.0525572 )
 scale = Vector2( 0.684664, 0.684664 )
 frames = SubResource( 7 )
+frame = 3
 playing = true
 
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_InteractionArea_area_entered"]

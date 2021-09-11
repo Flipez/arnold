@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/banana_1.png-b27208733488ed964bde79f5d5b136bd.stex"
+path="res://.import/coffee_cup.png-cfbcfbfbe4c0d3267f7a6dd5f7abb631.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/banana_1.png"
-dest_files=[ "res://.import/banana_1.png-b27208733488ed964bde79f5d5b136bd.stex" ]
+source_file="res://Objects/Crate/coffee_cup.png"
+dest_files=[ "res://.import/coffee_cup.png-cfbcfbfbe4c0d3267f7a6dd5f7abb631.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

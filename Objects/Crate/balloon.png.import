@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/banana_2.png-39694cf96f91e8ec9eda100986d34fff.stex"
+path="res://.import/balloon.png-6f68a85f3955e8ed666fb082dcd27b83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/banana_2.png"
-dest_files=[ "res://.import/banana_2.png-39694cf96f91e8ec9eda100986d34fff.stex" ]
+source_file="res://Objects/Crate/balloon.png"
+dest_files=[ "res://.import/balloon.png-6f68a85f3955e8ed666fb082dcd27b83.stex" ]
 
 [params]
 
