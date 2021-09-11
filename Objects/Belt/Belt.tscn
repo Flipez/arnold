@@ -186,132 +186,112 @@ position = Vector2( -168, 96 )
 rotation = 1.5708
 frames = ExtResource( 2 )
 
-[node name="AnimatedSprite19" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite22" type="AnimatedSprite" parent="."]
 position = Vector2( -168, 112 )
 rotation = 1.5708
 frames = ExtResource( 2 )
 
-[node name="AnimatedSprite20" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite23" type="AnimatedSprite" parent="."]
 position = Vector2( -168, 128 )
 rotation = 1.5708
 frames = ExtResource( 2 )
 
-[node name="AnimatedSprite21" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite24" type="AnimatedSprite" parent="."]
 position = Vector2( -168, 144 )
 rotation = 1.5708
 frames = ExtResource( 2 )
 
-[node name="AnimatedSprite22" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite25" type="AnimatedSprite" parent="."]
 position = Vector2( -168, 160 )
 rotation = 1.5708
 frames = ExtResource( 2 )
 
-[node name="AnimatedSprite23" type="AnimatedSprite" parent="."]
-position = Vector2( -168, 176 )
-rotation = 1.5708
-frames = ExtResource( 2 )
-
-[node name="AnimatedSprite24" type="AnimatedSprite" parent="."]
-position = Vector2( -168, 192 )
-rotation = 1.5708
-frames = ExtResource( 2 )
-
-[node name="AnimatedSprite25" type="AnimatedSprite" parent="."]
-position = Vector2( -168, 208 )
-rotation = 1.5708
-frames = ExtResource( 2 )
-
 [node name="AnimatedSprite26" type="AnimatedSprite" parent="."]
-position = Vector2( -168, 224 )
+position = Vector2( -160, 168 )
 rotation = 1.5708
 frames = ExtResource( 2 )
+offset = Vector2( 7.99997, 8 )
+
+[node name="AnimatedSprite40" type="AnimatedSprite" parent="."]
+position = Vector2( -160, 184 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+offset = Vector2( 7.99997, 8 )
+
+[node name="AnimatedSprite41" type="AnimatedSprite" parent="."]
+position = Vector2( -160, 200 )
+rotation = 1.5708
+frames = ExtResource( 2 )
+offset = Vector2( 7.99997, 8 )
 
 [node name="AnimatedSprite27" type="AnimatedSprite" parent="."]
-position = Vector2( -168, 240 )
+position = Vector2( -168, 224 )
 rotation = 4.71239
 frames = SubResource( 19 )
 flip_v = true
 
 [node name="AnimatedSprite28" type="AnimatedSprite" parent="."]
-position = Vector2( -152, 240 )
+position = Vector2( -152, 224 )
 rotation = 3.14159
 frames = ExtResource( 2 )
 flip_h = true
 
 [node name="AnimatedSprite29" type="AnimatedSprite" parent="."]
-position = Vector2( -136, 240 )
+position = Vector2( -136, 224 )
 rotation = 3.14159
 frames = ExtResource( 2 )
 flip_h = true
 
 [node name="AnimatedSprite30" type="AnimatedSprite" parent="."]
-position = Vector2( -120, 240 )
+position = Vector2( -120, 224 )
 rotation = 3.14159
 frames = ExtResource( 2 )
 flip_h = true
 
 [node name="AnimatedSprite31" type="AnimatedSprite" parent="."]
-position = Vector2( -104, 240 )
+position = Vector2( -104, 224 )
 rotation = 3.14159
 frames = ExtResource( 2 )
 flip_h = true
 
 [node name="AnimatedSprite32" type="AnimatedSprite" parent="."]
-position = Vector2( -88, 240 )
+position = Vector2( -88, 224 )
 rotation = 3.14159
 frames = ExtResource( 2 )
 flip_h = true
 
 [node name="AnimatedSprite33" type="AnimatedSprite" parent="."]
-position = Vector2( -72, 240 )
+position = Vector2( -72, 224 )
 rotation = 3.14159
 frames = ExtResource( 2 )
 flip_h = true
 
 [node name="AnimatedSprite34" type="AnimatedSprite" parent="."]
-position = Vector2( -55.9999, 240 )
+position = Vector2( -55.9999, 224 )
 rotation = 3.14159
 frames = ExtResource( 2 )
 flip_h = true
 
 [node name="AnimatedSprite35" type="AnimatedSprite" parent="."]
-position = Vector2( -39.9999, 240 )
+position = Vector2( -39.9999, 224 )
 rotation = 3.14159
 frames = ExtResource( 2 )
 flip_h = true
 
 [node name="AnimatedSprite36" type="AnimatedSprite" parent="."]
-position = Vector2( -24, 240 )
+position = Vector2( -24, 224 )
 rotation = 3.14159
 frames = ExtResource( 2 )
 flip_h = true
 
 [node name="AnimatedSprite37" type="AnimatedSprite" parent="."]
-position = Vector2( -7.99997, 240 )
+position = Vector2( -7.99994, 224 )
 rotation = 3.14159
 frames = ExtResource( 2 )
 flip_h = true
 
 [node name="AnimatedSprite38" type="AnimatedSprite" parent="."]
-position = Vector2( 8.00009, 240 )
-rotation = 3.14159
-frames = ExtResource( 2 )
-flip_h = true
-
-[node name="AnimatedSprite39" type="AnimatedSprite" parent="."]
-position = Vector2( 24.0001, 240 )
-rotation = 3.14159
-frames = ExtResource( 2 )
-flip_h = true
-
-[node name="AnimatedSprite40" type="AnimatedSprite" parent="."]
-position = Vector2( 40.0001, 240 )
-rotation = 3.14159
-frames = ExtResource( 2 )
-flip_h = true
-
-[node name="AnimatedSprite41" type="AnimatedSprite" parent="."]
-position = Vector2( 56.0001, 240 )
+position = Vector2( 8.00012, 224 )
 rotation = 3.14159
 frames = ExtResource( 2 )
 flip_h = true
