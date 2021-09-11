@@ -61,14 +61,14 @@ animations = [ {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "holding",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="CircleShape2D" id=14]
-radius = 5.99825
+radius = 5.80787
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 9.37855, 3.98042 )
+extents = Vector2( 9.43851, 3.61722 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, 7.62939e-06 )
@@ -77,12 +77,13 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -58.2486, 21.9982 )
 frames = SubResource( 13 )
-frame = 4
+animation = "holding"
+frame = 2
 playing = true
 offset = Vector2( 58.2486, -21.9982 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.0398848, 0.178554 )
+position = Vector2( -0.210397, 0.929401 )
 shape = SubResource( 14 )
 
 [node name="InteractionArea" type="Area2D" parent="."]
@@ -95,7 +96,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="InteractionShape" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2( -6.92204, -1.12404 )
+position = Vector2( -6.922, -1.124 )
 shape = SubResource( 15 )
 disabled = true
 
