@@ -17,7 +17,12 @@ func _process(delta):
   if never_touched:
     move_on_belt(delta)
   if hold_by_player:
+    $ContentAnimatedSprite.visible = true
+    $Sprite.visible = false
     stick_to_player(delta)
+  else:
+    $ContentAnimatedSprite.visible = false
+    $Sprite.visible = true
   if never_touched == false && hold_by_player == false && out_of_play_area():
     destroy()
 

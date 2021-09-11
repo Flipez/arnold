@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/MainLevel.gd" type="Script" id=4]
 [ext_resource path="res://Objects/lung.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/skin_sheet.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/skin.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/bg_16.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/toilet.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/bar_full.png" type="Texture" id=10]
@@ -589,6 +590,13 @@ tile_data = PoolIntArray( -65514, 0, 0, -65510, 1610612736, 0, 22, 1610612736, 0
 
 [node name="Belt" parent="." instance=ExtResource( 3 )]
 position = Vector2( 192, 0 )
+
+[node name="Crates" type="Node2D" parent="."]
+position = Vector2( 192, 8 )
+
+[node name="Crate" parent="Crates" instance=ExtResource( 5 )]
+position = Vector2( -56, 136 )
+never_touched = false
 
 [node name="skin_overlay" type="TileMap" parent="."]
 rotation = 0.00121777

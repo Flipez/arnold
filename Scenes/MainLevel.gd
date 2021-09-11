@@ -10,5 +10,5 @@ func _ready():
 
 func _on_CrateSpawnerTimer_timeout():
   var crate = crate_preload.instance()
-  add_child(crate)
+  $Crates.add_child(crate)
   crate.connect("destroyed", shitBar, "crate_destroyed")
