@@ -8,11 +8,47 @@ export var never_touched = true
 signal destroyed
 signal collected
 
-# Called when the node enters the scene tree for the first time.
+enum types {
+  AIR,
+  BANANA,
+  CHOCOLATE,
+  COFFEE,
+  BEER
+ }
+
+var rng = RandomNumberGenerator.new()
+var type_string = ""
+var type_id = null
+
 func _ready():
   if never_touched:
     position.x = 200
     position.y = -8
+    
+  rng.randomize()
+  var random_number = rng.randi_range(0, 10)
+  
+  match random_number:
+    0,1,2,3:
+      type_id = types.AIR
+      $ContentAnimatedSprite.play("air")
+      pass
+    4,5,6:
+      type_id = types.BANANA
+      $ContentAnimatedSprite.play("banana")
+      pass
+    7,8:
+      type_id = types.CHOCOLATE
+      $ContentAnimatedSprite.play("chocolate")
+      pass
+    9:
+      type_id = types.COFFEE
+      $ContentAnimatedSprite.play("coffee")
+      pass
+    10:
+      type_id = types.BEER
+      $ContentAnimatedSprite.play("beer")
+      pass
 
 func _process(delta):
   if never_touched:
@@ -22,13 +58,9 @@ func _process(delta):
     $Sprite.visible = false
     stick_to_player(delta)
   else:
-    $ContentAnimatedSprite.visible = false
-    $Sprite.visible = true
     for body in $InteractionArea.get_overlapping_areas():
       if body.get_parent().is_in_group("tubes"):
         collect()
-     # for body in 
-      #if body.name == "Player" and Input.is_action_just_pressed("jump"):
   if never_touched == false && hold_by_player == false && out_of_play_area():
     destroy()
 
