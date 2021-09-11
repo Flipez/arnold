@@ -9,7 +9,7 @@
 [ext_resource path="res://Sprites/skin.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/bg_16.png" type="Texture" id=8]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=13]
 0/name = "bg.png 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
@@ -94,7 +94,7 @@ region = Rect2( 32, 0, 16, 16 )
 atlas = ExtResource( 4 )
 region = Rect2( 48, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
@@ -102,25 +102,25 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 5 )
 region = Rect2( 48, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 5 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 5 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=19]
 animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
 "name": "default",
 "speed": 3.0
@@ -130,7 +130,7 @@ animations = [ {
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 40, 72 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 13 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0 )
@@ -141,114 +141,111 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 262146, -1610612736, 0, 262147, -1610612736, 0, 262148, -1610612736, 0, 262149, -1610612736, 0, 262150, -1610612736, 0, 262151, -1610612736, 0, 262152, -1610612736, 0, 262153, -1610612736, 0, 262154, -1610612736, 0, 262155, -1610612736, 0, 262156, -1610612736, 0, 262157, -1610612736, 0, 262158, -1610612736, 0, 262159, -1610612736, 0, 262160, -1610612736, 0, 262161, -1610612736, 0, 262162, -1610612736, 0, 262163, -1610612736, 0, 262164, -1610612736, 0, 262165, -1610612736, 0, 262166, 0, 0, 327682, 0, 0, 327702, 0, 0, 393218, 0, 0, 393238, 0, 0, 458754, 0, 0, 458774, 0, 0, 524290, 0, 0, 524310, 0, 0, 589826, 0, 0, 589846, 0, 0, 655362, 0, 0, 655382, 0, 0, 720898, 0, 0, 720918, 0, 0, 786434, 0, 0, 786454, 0, 0, 851970, 0, 0, 851990, 0, 0, 917506, 0, 0, 917507, -1610612736, 0, 917508, -1610612736, 0, 917509, -1610612736, 0, 917510, -1610612736, 0, 917511, -1610612736, 0, 917512, -1610612736, 0, 917513, -1610612736, 0, 917514, -1610612736, 0, 917515, -1610612736, 0, 917516, -1610612736, 0, 917517, -1610612736, 0, 917518, -1610612736, 0, 917519, -1610612736, 0, 917520, -1610612736, 0, 917521, -1610612736, 0, 917522, -1610612736, 0, 917523, -1610612736, 0, 917524, -1610612736, 0, 917525, -1610612736, 0, 917526, 0, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 160, 104 )
-FRICTION = 500
-ACCELERATION = 500
-MAX_SPEED = 80
-state = 0
-
 [node name="Belt" type="StaticBody2D" parent="."]
 position = Vector2( 192, 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Belt"]
 rotation = 1.5708
-frames = SubResource( 6 )
-frame = 3
+frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Belt"]
 position = Vector2( 0, 16 )
 rotation = 1.5708
-frames = SubResource( 6 )
-frame = 3
+frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Belt"]
 position = Vector2( 0, 48 )
 rotation = 4.71239
-frames = SubResource( 11 )
-frame = 3
+frames = SubResource( 19 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Belt"]
 position = Vector2( 0, 32 )
 rotation = 1.5708
-frames = SubResource( 6 )
-frame = 3
+frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -16, 48 )
 rotation = 3.14159
-frames = SubResource( 6 )
-frame = 3
+frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -32, 48 )
 rotation = 3.14159
-frames = SubResource( 6 )
-frame = 3
+frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -48, 48 )
 rotation = 3.14159
-frames = SubResource( 6 )
-frame = 3
+frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -64, 48 )
 rotation = 3.14159
-frames = SubResource( 6 )
-frame = 3
+frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -80, 48 )
 rotation = 3.14159
-frames = SubResource( 6 )
-frame = 3
+frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite10" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -96, 48 )
 rotation = 3.14159
-frames = SubResource( 6 )
-frame = 3
+frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite11" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -112, 48 )
 rotation = 3.14159
-frames = SubResource( 6 )
-frame = 3
+frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite12" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -128, 48 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite13" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -144, 48 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite14" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -160, 48 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite15" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 48 )
 rotation = 4.71239
-frames = SubResource( 11 )
+frames = SubResource( 19 )
+frame = 3
 playing = true
 flip_h = true
 flip_v = true
@@ -256,190 +253,218 @@ flip_v = true
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 64 )
 rotation = 1.5708
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 80 )
 rotation = 1.5708
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 96 )
 rotation = 1.5708
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite19" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 112 )
 rotation = 1.5708
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite20" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 128 )
 rotation = 1.5708
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite21" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 144 )
 rotation = 1.5708
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite22" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 160 )
 rotation = 1.5708
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite23" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 176 )
 rotation = 1.5708
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite24" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 192 )
 rotation = 1.5708
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite25" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 208 )
 rotation = 1.5708
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite26" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 224 )
 rotation = 1.5708
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite27" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -176, 240 )
 rotation = 4.71239
-frames = SubResource( 11 )
+frames = SubResource( 19 )
+frame = 3
 playing = true
 flip_v = true
 
 [node name="AnimatedSprite28" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -160, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite29" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -144, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite30" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -128, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite31" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -112, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite32" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -96, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite33" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -80, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite34" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -63.9999, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite35" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -47.9999, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite36" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -32, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite37" type="AnimatedSprite" parent="Belt"]
 position = Vector2( -16, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite38" type="AnimatedSprite" parent="Belt"]
 position = Vector2( 6.10352e-05, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite39" type="AnimatedSprite" parent="Belt"]
 position = Vector2( 16.0001, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite40" type="AnimatedSprite" parent="Belt"]
 position = Vector2( 32.0001, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite41" type="AnimatedSprite" parent="Belt"]
 position = Vector2( 48.0001, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite42" type="AnimatedSprite" parent="Belt"]
 position = Vector2( 64.0001, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="AnimatedSprite43" type="AnimatedSprite" parent="Belt"]
 position = Vector2( 80.0001, 240 )
 rotation = 3.14159
-frames = SubResource( 6 )
+frames = SubResource( 14 )
+frame = 3
 playing = true
 flip_h = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 160, 104 )
+position = Vector2( 134.609, 84.8457 )
 
 [node name="Crate" parent="." instance=ExtResource( 3 )]
 position = Vector2( 192, -8 )
