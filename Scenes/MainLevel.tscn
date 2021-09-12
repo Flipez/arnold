@@ -684,7 +684,9 @@ tile_data = PoolIntArray( -65521, -1073741823, 0, 15, -1610612735, 0, 65551, -10
 ]]
 script = ExtResource( 15 )
 
-[node name="Area_lung" type="Area2D" parent="Tubes"]
+[node name="Area_lung" type="Area2D" parent="Tubes" groups=[
+"air",
+]]
 collision_layer = 0
 collision_mask = 64
 

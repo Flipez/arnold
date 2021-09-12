@@ -31,19 +31,21 @@ func _ready():
   match random_number:
     0,1,2,3:
       type_id = types.AIR
-      $ContentAnimatedSprite.play("air")
+      type_string = "air"
     4,5,6:
       type_id = types.BANANA
-      $ContentAnimatedSprite.play("banana")
+      type_string = "air"
     7,8:
       type_id = types.CHOCOLATE
-      $ContentAnimatedSprite.play("chocolate")
+      type_string = "air"
     9:
       type_id = types.COFFEE
-      $ContentAnimatedSprite.play("coffee")
+      type_string = "air"
     10:
       type_id = types.BEER
-      $ContentAnimatedSprite.play("beer")
+      type_string = "air"
+  
+  $ContentAnimatedSprite.play(type_string)
 
 func _process(delta):
   if never_touched:
@@ -54,7 +56,9 @@ func _process(delta):
     stick_to_player(delta)
   else:
     for body in $InteractionArea.get_overlapping_areas():
-      if body.get_parent().is_in_group("tubes"):
+      var parent = body.get_parent()
+      print(parent.name )
+      if parent.is_in_group("tubes") && body.is_in_group(type_string):
         collect()
   if never_touched == false && hold_by_player == false && out_of_play_area():
     destroy()
@@ -104,5 +108,7 @@ func destroy():
   queue_free()
   
 func collect():
+  print("collected")
+  $CollectPlayer.play()
   emit_signal("collected")
   queue_free()
