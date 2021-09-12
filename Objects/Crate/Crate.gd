@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-export var SPEED = 80
+export var SPEED = 5
 var hold_by_player = false
 var player = null
 export var never_touched = true
@@ -65,7 +65,7 @@ func _process(delta):
 func move_on_belt(delta):
   if position.x == 200 && position.y <= 48:
     position.y += SPEED * delta
-  elif position.y == 224 && position.x >= 252:
+  elif position.y == 224 && position.x >= 218:
     destroy()
   elif position.y >= 224 && position.x <= 252:
     position.y = 224
@@ -106,7 +106,11 @@ func destroy():
   queue_free()
   
 func collect():
+  $InteractionArea/CollisionShape2D.disabled = true
+  visible = false
+  $CollectAudioPlayer.play()
+
+func _on_CollectAudioPlayer_finished():
   print("collected")
-  $CollectPlayer.play()
   emit_signal("collected")
   queue_free()

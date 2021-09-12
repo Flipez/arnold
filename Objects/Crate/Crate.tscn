@@ -55,7 +55,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
-"name": "New Anim",
+"name": "air",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ) ],
@@ -103,18 +103,18 @@ volume_db = -4.039
 stream = ExtResource( 3 )
 volume_db = -4.039
 
-[node name="CollectPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-volume_db = -4.039
-
 [node name="ContentAnimatedSprite" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( -1.13249e-06, 0.0525572 )
 scale = Vector2( 0.684664, 0.684664 )
 frames = SubResource( 11 )
-animation = "New Anim"
+animation = "air"
 frame = 2
 playing = true
 
+[node name="CollectAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_InteractionArea_area_entered"]
 [connection signal="area_exited" from="InteractionArea" to="." method="_on_InteractionArea_area_exited"]
+[connection signal="finished" from="CollectAudioPlayer" to="." method="_on_CollectAudioPlayer_finished"]
