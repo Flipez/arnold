@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Belt/Belt.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/MainLevel.gd" type="Script" id=4]
-[ext_resource path="res://Objects/lung.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/lung.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/skin_sheet.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/tube_corner.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/bg_16.png" type="Texture" id=8]
@@ -18,11 +18,11 @@
 [ext_resource path="res://Objects/Crate/Crate.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Sprites/bubbles.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/sign_stick.png" type="Texture" id=19]
-[ext_resource path="res://Objects/muscle.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/muscle.png" type="Texture" id=20]
 [ext_resource path="res://Sprites/sign_area.png" type="Texture" id=21]
-[ext_resource path="res://Objects/heart.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/heart.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/tube_entrance.png" type="Texture" id=23]
-[ext_resource path="res://Objects/brain.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/brain.png" type="Texture" id=24]
 [ext_resource path="res://Sprites/tube.png" type="Texture" id=25]
 
 [sub_resource type="TileSet" id=1]
@@ -694,7 +694,9 @@ collision_mask = 64
 position = Vector2( 55.4796, 135.654 )
 shape = SubResource( 24 )
 
-[node name="Area_heart" type="Area2D" parent="Tubes"]
+[node name="Area_heart" type="Area2D" parent="Tubes" groups=[
+"chocolate",
+]]
 collision_layer = 0
 collision_mask = 64
 
@@ -702,7 +704,10 @@ collision_mask = 64
 position = Vector2( 279.649, 136.051 )
 shape = SubResource( 24 )
 
-[node name="Area_brain" type="Area2D" parent="Tubes"]
+[node name="Area_brain" type="Area2D" parent="Tubes" groups=[
+"beer",
+"coffee",
+]]
 collision_layer = 0
 collision_mask = 64
 
@@ -711,7 +716,9 @@ position = Vector2( 247.953, 88.1117 )
 rotation = -1.57079
 shape = SubResource( 24 )
 
-[node name="Area_muscle" type="Area2D" parent="Tubes"]
+[node name="Area_muscle" type="Area2D" parent="Tubes" groups=[
+"banana",
+]]
 position = Vector2( 16.2709, 95.6409 )
 collision_layer = 0
 collision_mask = 64

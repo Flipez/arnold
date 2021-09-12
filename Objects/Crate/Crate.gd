@@ -34,16 +34,16 @@ func _ready():
       type_string = "air"
     4,5,6:
       type_id = types.BANANA
-      type_string = "air"
+      type_string = "banana"
     7,8:
       type_id = types.CHOCOLATE
-      type_string = "air"
+      type_string = "chocolate"
     9:
       type_id = types.COFFEE
-      type_string = "air"
+      type_string = "coffee"
     10:
       type_id = types.BEER
-      type_string = "air"
+      type_string = "beer"
   
   $ContentAnimatedSprite.play(type_string)
 
