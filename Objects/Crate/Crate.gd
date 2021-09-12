@@ -56,9 +56,7 @@ func _process(delta):
     stick_to_player(delta)
   else:
     for body in $InteractionArea.get_overlapping_areas():
-      var parent = body.get_parent()
-      print(parent.name )
-      if parent.is_in_group("tubes") && body.is_in_group(type_string):
+      if body.get_parent().is_in_group("tubes") && body.is_in_group(type_string):
         collect()
   if never_touched == false && hold_by_player == false && out_of_play_area():
     destroy()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Sprites/bubblecorner_1.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/bubblecorner_2.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/shitbar.gd" type="Script" id=14]
-[ext_resource path="res://Scenes/Node2D.gd" type="Script" id=15]
 [ext_resource path="res://Objects/Crate/Crate.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Sprites/bubbles.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/sign_stick.png" type="Texture" id=19]
@@ -630,8 +629,8 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 14/z_index = 0
 
 [sub_resource type="CapsuleShape2D" id=24]
-radius = 3.64544
-height = 9.51643
+radius = 11.7704
+height = 0.0
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource( 4 )
@@ -682,7 +681,6 @@ tile_data = PoolIntArray( -65521, -1073741823, 0, 15, -1610612735, 0, 65551, -10
 [node name="Tubes" type="Node2D" parent="." groups=[
 "tubes",
 ]]
-script = ExtResource( 15 )
 
 [node name="Area_lung" type="Area2D" parent="Tubes" groups=[
 "air",
