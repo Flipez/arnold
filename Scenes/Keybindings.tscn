@@ -200,7 +200,8 @@ scale = Vector2( 0.0701696, 0.0701696 )
 texture = ExtResource( 6 )
 
 [node name="Player1" type="Node2D" parent="."]
-position = Vector2( 184, 152 )
+position = Vector2( 148.682, 160 )
+rotation = -0.523599
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player1"]
 position = Vector2( 0, -16 )
@@ -222,7 +223,8 @@ position = Vector2( 40, 0 )
 frames = SubResource( 15 )
 
 [node name="Player2" type="Node2D" parent="."]
-position = Vector2( 184, 200 )
+position = Vector2( 220, 160 )
+rotation = -0.523599
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player2"]
 position = Vector2( 0, -16 )
@@ -244,14 +246,14 @@ position = Vector2( 40, 0 )
 frames = SubResource( 30 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 183.58, 226.523 )
+position = Vector2( 171.387, 200.034 )
 frames = SubResource( 33 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 160.0
-margin_top = 224.0
-margin_right = 401.0
-margin_bottom = 255.0
+margin_left = 147.807
+margin_top = 197.512
+margin_right = 388.807
+margin_bottom = 228.512
 rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Use           ingame to let Player 2 join."
