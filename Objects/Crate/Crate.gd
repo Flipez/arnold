@@ -79,8 +79,8 @@ func move_on_belt(delta):
 
 
 func stick_to_player(_delta):
-  position.x = player.position.x + cos(player.rotation - PI/2) * 13
-  position.y = player.position.y + sin(player.rotation - PI/2) * 13
+  position.x = player.position.x + cos(player.rotation - PI/2) * 14
+  position.y = player.position.y + sin(player.rotation - PI/2) * 14
   if type_id != types.AIR:
     look_at(player.position)
     rotation_degrees -= 90

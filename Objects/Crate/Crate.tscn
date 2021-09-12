@@ -14,31 +14,31 @@ extents = Vector2( 5.6731, 5.69607 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 5.64748, 5.625 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
 region = Rect2( 132, 546, 22, 26 )
 
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 8 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 8 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 8 )
-region = Rect2( 48, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 75, 156, 25, 26 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 8 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 8 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 8 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
 region = Rect2( 572, 260, 22, 26 )
 
@@ -46,24 +46,24 @@ region = Rect2( 572, 260, 22, 26 )
 atlas = ExtResource( 5 )
 region = Rect2( 494, 575, 26, 23 )
 
-[sub_resource type="SpriteFrames" id=18]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 11 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "chocolate",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
-"loop": true,
-"name": "air",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 16 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "coffee",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 17 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "air",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ) ],
 "loop": true,
 "name": "beer",
 "speed": 5.0
@@ -107,7 +107,7 @@ volume_db = -4.039
 visible = false
 position = Vector2( -1.13249e-06, 0.0525572 )
 scale = Vector2( 0.684664, 0.684664 )
-frames = SubResource( 18 )
+frames = SubResource( 11 )
 animation = "air"
 frame = 3
 playing = true
