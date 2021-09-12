@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -10,12 +10,12 @@
 [ext_resource path="res://Sprites/bg_16.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/toilet.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/bar_full.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/bar_empty.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/bubblecorner_1.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/bubblecorner_2.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/shitbar.gd" type="Script" id=14]
 [ext_resource path="res://Objects/Crate/destroy.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Objects/Crate/Crate.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Sprites/bar_small_empty2.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/bubbles.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/sign_stick.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/muscle.png" type="Texture" id=20]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Sprites/tube_entrance.png" type="Texture" id=23]
 [ext_resource path="res://Sprites/brain.png" type="Texture" id=24]
 [ext_resource path="res://Sprites/tube.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/bar_small_full.png" type="Texture" id=26]
 
 [sub_resource type="TileSet" id=1]
 0/name = "bg.png 0"
@@ -633,6 +634,85 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 radius = 11.7704
 height = 0.0
 
+[sub_resource type="StreamTexture" id=25]
+load_path = "res://.import/bar_empty.png-232a8523b418ead02cfa8dab63c8afb4.stex"
+
+[sub_resource type="StreamTexture" id=26]
+load_path = "res://.import/bar_full.png-1688aba956472c6bf91de34804bb6e30.stex"
+
+[sub_resource type="StreamTexture" id=27]
+load_path = "res://.import/bar_small_empty2.png-31dfc446a9b285476b86cfac80bdb2a7.stex"
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=32]
+animations = [ {
+"frames": [ SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="StreamTexture" id=28]
+load_path = "res://.import/bar_small_empty2.png-31dfc446a9b285476b86cfac80bdb2a7.stex"
+
+[sub_resource type="StreamTexture" id=29]
+load_path = "res://.import/bar_small_full.png-e70a7f12a189274c2fa91608d85c48b8.stex"
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 22 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=35]
+animations = [ {
+"frames": [ SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 20 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 24 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=41]
+animations = [ {
+"frames": [ SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
 [node name="MainLevel" type="Node2D"]
 script = ExtResource( 4 )
 
@@ -657,7 +737,7 @@ position = Vector2( 192, 0 )
 tile_set = SubResource( 10 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 196624, 4, 0, 262160, 2, 0, 327695, -1610612736, 0, 393219, 6, 0, 393233, 5, 0, 458755, 2, 0, 458769, 2, 0, 524291, 0, 0, 524305, 1610612736, 0, 720911, 7, 0, 720912, -1073741824, 0, 786447, 2, 0 )
+tile_data = PoolIntArray( 327695, -1610612736, 0, 524291, 0, 0, 524305, 1610612736, 0, 720912, -1073741824, 0 )
 
 [node name="Crates" type="Node2D" parent="."]
 
@@ -677,7 +757,7 @@ tile_data = PoolIntArray( -1, 1610612736, 0, -65536, 1610612736, 0, -65535, 1610
 tile_set = SubResource( 10 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( -65521, -1073741823, 0, 15, -1610612735, 0, 65551, -1073741823, 0, 131087, -1610612735, 0, 196623, -1610612735, 0, 196624, 4, 0, 262159, -1610612735, 0, 262160, 2, 0, 393219, 6, 0, 393233, 5, 0, 393235, -1073741816, 0, 393236, 8, 0, 458755, 2, 0, 458769, 2, 0, 458771, -1610612735, 0, 589822, 1, 0, 589823, 1610612737, 0, 524288, 1, 0, 524289, 1610612737, 0, 524290, 1, 0, 524306, 1610612737, 0, 524307, -1610612728, 0, 720911, 7, 0, 786447, 2, 0, 786448, -1610612735, 0, 851984, 1610612744, 0, 851985, 1, 0, 851986, 1610612737, 0, 851987, 1, 0, 851988, 1610612737, 0 )
+tile_data = PoolIntArray( -65521, -1073741823, 0, 15, -1610612735, 0, 65551, -1073741823, 0, 131087, -1610612735, 0, 196623, -1610612735, 0, 262159, -1610612735, 0, 393235, -1073741816, 0, 393236, 8, 0, 458771, -1610612735, 0, 589822, 1, 0, 589823, 1610612737, 0, 524288, 1, 0, 524289, 1610612737, 0, 524290, 1, 0, 524306, 1610612737, 0, 524307, -1610612728, 0, 786448, -1610612735, 0, 851984, 1610612744, 0, 851985, 1, 0, 851986, 1610612737, 0, 851987, 1, 0, 851988, 1610612737, 0 )
 
 [node name="Tubes" type="Node2D" parent="." groups=[
 "tubes",
@@ -734,10 +814,10 @@ position = Vector2( 200, 104 )
 wait_time = 10.0
 
 [node name="Shitbar" type="Control" parent="."]
-margin_left = 196.0
-margin_top = 217.0
-margin_right = 323.0
-margin_bottom = 243.0
+margin_left = 196.945
+margin_top = 217.945
+margin_right = 323.945
+margin_bottom = 243.945
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -754,18 +834,144 @@ __meta__ = {
 }
 
 [node name="TextureProgress" type="TextureProgress" parent="Shitbar"]
-margin_left = 25.8224
-margin_top = 3.79941
-margin_right = 121.822
-margin_bottom = 19.7994
+margin_left = 26.0
+margin_top = 4.0
+margin_right = 125.0
+margin_bottom = 21.0
 max_value = 10.0
-texture_under = ExtResource( 11 )
-texture_progress = ExtResource( 10 )
+texture_under = SubResource( 25 )
+texture_progress = SubResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BarIncreasePlayer" type="AudioStreamPlayer" parent="Shitbar"]
 stream = ExtResource( 15 )
+
+[node name="Lungbar" type="Control" parent="."]
+margin_left = -2.0
+margin_top = 71.0
+margin_right = 39.0
+margin_bottom = 129.0
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="Lungbar"]
+margin_left = 7.3611
+margin_top = 53.9713
+margin_right = 103.361
+margin_bottom = 69.9713
+rect_rotation = -89.9999
+max_value = 10.0
+texture_under = SubResource( 27 )
+texture_progress = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarIncreasePlayer" type="AudioStreamPlayer" parent="Lungbar"]
+stream = ExtResource( 15 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Lungbar"]
+position = Vector2( 29.0328, 46.052 )
+frames = SubResource( 32 )
+playing = true
+
+[node name="Heartbar" type="Control" parent="."]
+margin_left = 274.0
+margin_top = 38.0
+margin_right = 336.0
+margin_bottom = 149.0
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="Heartbar"]
+margin_left = 35.6543
+margin_top = 54.2753
+margin_right = 131.654
+margin_bottom = 70.2753
+rect_rotation = -89.9999
+max_value = 10.0
+texture_under = SubResource( 28 )
+texture_progress = SubResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarIncreasePlayer" type="AudioStreamPlayer" parent="Heartbar"]
+stream = ExtResource( 15 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Heartbar"]
+position = Vector2( 18.6877, 74.751 )
+frames = SubResource( 35 )
+frame = 1
+playing = true
+
+[node name="Musclebar" type="Control" parent="."]
+margin_left = 244.0
+margin_top = 143.0
+margin_right = 318.0
+margin_bottom = 221.0
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="Musclebar"]
+margin_left = 54.922
+margin_top = 63.2163
+margin_right = 102.922
+margin_bottom = 71.2163
+rect_rotation = -89.9999
+max_value = 10.0
+texture_under = ExtResource( 17 )
+texture_progress = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarIncreasePlayer" type="AudioStreamPlayer" parent="Musclebar"]
+stream = ExtResource( 15 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Musclebar"]
+position = Vector2( 42.7149, 53.0599 )
+frames = SubResource( 38 )
+playing = true
+
+[node name="Brainbar" type="Control" parent="."]
+margin_left = 215.685
+margin_top = 5.33371
+margin_right = 299.685
+margin_bottom = 65.3337
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="Brainbar"]
+margin_left = 42.6663
+margin_top = 56.584
+margin_right = 90.6663
+margin_bottom = 64.584
+rect_rotation = -89.9999
+max_value = 10.0
+texture_under = ExtResource( 17 )
+texture_progress = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BarIncreasePlayer" type="AudioStreamPlayer" parent="Brainbar"]
+stream = ExtResource( 15 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Brainbar"]
+position = Vector2( 14.3495, 48.7216 )
+frames = SubResource( 41 )
+frame = 1
+playing = true
 
 [connection signal="timeout" from="CrateSpawnerTimer" to="." method="_on_CrateSpawnerTimer_timeout"]
