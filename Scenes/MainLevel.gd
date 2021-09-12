@@ -30,6 +30,8 @@ func _on_CrateSpawnerTimer_timeout():
 func set_speed_scale(scale):
   $Belt.set_speed(scale)
   CRATE_SPEED = 5 * scale
+  for crate in $Crates.get_children():
+    crate.SPEED = 5 * scale
 
 func new_score(score):
   set_speed_scale(1 + score / 10)
