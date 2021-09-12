@@ -25,7 +25,14 @@ func _on_CrateSpawnerTimer_timeout():
   crate.SPEED = CRATE_SPEED
   $Crates.add_child(crate)
   crate.connect("destroyed", shitBar, "crate_destroyed")
-  crate.connect("collected", $Lungbar, "crate_collected")
+  if crate.type_string == "air":
+    crate.connect("collected", $Lungbar, "crate_collected")
+  if crate.type_string == "chocolate":
+    crate.connect("collected", $Heartbar, "crate_collected")
+  if crate.type_string == "banana":
+    crate.connect("collected", $Musclebar, "crate_collected")
+  if crate.type_string == "coffee" or crate.type_string == "beer":
+    crate.connect("collected", $Brainbar, "crate_collected")
   
 func set_speed_scale(scale):
   $Belt.set_speed(scale)
