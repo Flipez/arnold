@@ -113,4 +113,5 @@ func collect():
 func _on_CollectAudioPlayer_finished():
   print("collected")
   emit_signal("collected")
+  Score.increase(5)
   queue_free()
