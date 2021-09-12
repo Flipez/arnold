@@ -9,13 +9,11 @@
 [ext_resource path="res://Sprites/tube_corner.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/bg_16.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/toilet.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/bar_full.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/bubblecorner_1.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/bubblecorner_2.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/shitbar.gd" type="Script" id=14]
 [ext_resource path="res://Objects/Crate/destroy.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Objects/Crate/Crate.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Sprites/bar_small_empty2.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/bubbles.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/sign_stick.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/muscle.png" type="Texture" id=20]
@@ -643,6 +641,9 @@ load_path = "res://.import/bar_full.png-1688aba956472c6bf91de34804bb6e30.stex"
 [sub_resource type="StreamTexture" id=27]
 load_path = "res://.import/bar_small_empty2.png-31dfc446a9b285476b86cfac80bdb2a7.stex"
 
+[sub_resource type="StreamTexture" id=42]
+load_path = "res://.import/bar_small_full.png-e70a7f12a189274c2fa91608d85c48b8.stex"
+
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 16, 16 )
@@ -680,6 +681,9 @@ animations = [ {
 "name": "default",
 "speed": 3.0
 } ]
+
+[sub_resource type="StreamTexture" id=43]
+load_path = "res://.import/bar_small_empty2.png-31dfc446a9b285476b86cfac80bdb2a7.stex"
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 20 )
@@ -722,6 +726,16 @@ tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -131074, -1073741824, 0, -131073, -1073741824, 0, -196608, -1073741824, 0, -196607, -1073741824, 0, -196606, -1073741824, 0, -196605, -1073741824, 0, -196604, -1073741824, 0, -196603, -1073741824, 0, -196602, -1073741824, 0, -196601, -1073741824, 0, -196600, -1073741824, 0, -65538, -1073741824, 0, -65537, -1073741824, 0, -131072, -1073741824, 0, -131071, -1073741824, 0, -131070, -1073741824, 0, -131069, -1073741824, 0, -131068, -1073741824, 0, -131067, -1073741824, 0, -131066, -1073741824, 0, -131065, -1073741824, 0, -131064, -1073741824, 0, -2, -1073741824, 0, -1, -1073741824, 0, -65536, -1073741824, 0, -65535, -1073741824, 0, -65534, -1073741824, 0, -65533, -1073741824, 0, -65532, -1073741824, 0, -65531, -1073741824, 0, -65530, -1073741824, 0, -65529, -1073741824, 0, -65528, -1073741824, 0, 65534, -1073741824, 0, 65535, -1073741824, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 131070, -1073741824, 0, 131071, -1073741824, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 196606, -1073741824, 0, 196607, -1073741824, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 262142, -1073741824, 0, 262143, -1073741824, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 327678, -1073741824, 0, 327679, -1073741824, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 393214, -1073741824, 0, 393215, -1073741824, 0, 327680, -1073741824, 0, 327681, -1073741824, 0, 327682, -1073741824, 0, 327683, -1073741824, 0, 327684, -1073741824, 0, 327685, -1073741824, 0, 327686, -1073741824, 0, 327687, -1073741824, 0, 327688, -1073741824, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="TileMap"]
+margin_left = -50.0
+margin_top = -76.0
+margin_right = 289.0
+margin_bottom = 176.0
+color = Color( 0, 0, 0, 0.45098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="frame" type="TileMap" parent="."]
 rotation = 0.00121777
@@ -833,7 +847,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="Shitbar"]
+[node name="ShitProgress" type="TextureProgress" parent="Shitbar"]
 margin_left = 26.0
 margin_top = 4.0
 margin_right = 125.0
@@ -858,15 +872,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="Lungbar"]
-margin_left = 7.3611
-margin_top = 53.9713
-margin_right = 103.361
-margin_bottom = 69.9713
+[node name="LungProgress" type="TextureProgress" parent="Lungbar"]
+margin_left = 7.0
+margin_top = 54.0
+margin_right = 57.0
+margin_bottom = 64.0
 rect_rotation = -89.9999
-max_value = 10.0
+value = 90.0
 texture_under = SubResource( 27 )
-texture_progress = ExtResource( 10 )
+texture_progress = SubResource( 42 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -884,18 +898,17 @@ margin_left = 274.0
 margin_top = 38.0
 margin_right = 336.0
 margin_bottom = 149.0
-script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="Heartbar"]
+[node name="HeartProgress" type="TextureProgress" parent="Heartbar"]
 margin_left = 35.6543
 margin_top = 54.2753
 margin_right = 131.654
 margin_bottom = 70.2753
 rect_rotation = -89.9999
-max_value = 10.0
+value = 65.0
 texture_under = SubResource( 28 )
 texture_progress = SubResource( 29 )
 __meta__ = {
@@ -908,7 +921,6 @@ stream = ExtResource( 15 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Heartbar"]
 position = Vector2( 18.6877, 74.751 )
 frames = SubResource( 35 )
-frame = 1
 playing = true
 
 [node name="Musclebar" type="Control" parent="."]
@@ -916,20 +928,19 @@ margin_left = 244.0
 margin_top = 143.0
 margin_right = 318.0
 margin_bottom = 221.0
-script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="Musclebar"]
-margin_left = 54.922
+[node name="MuscleProgress" type="TextureProgress" parent="Musclebar"]
+margin_left = 55.3188
 margin_top = 63.2163
-margin_right = 102.922
+margin_right = 103.319
 margin_bottom = 71.2163
 rect_rotation = -89.9999
-max_value = 10.0
-texture_under = ExtResource( 17 )
-texture_progress = ExtResource( 10 )
+value = 65.0
+texture_under = SubResource( 43 )
+texture_progress = SubResource( 42 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -940,6 +951,7 @@ stream = ExtResource( 15 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Musclebar"]
 position = Vector2( 42.7149, 53.0599 )
 frames = SubResource( 38 )
+frame = 1
 playing = true
 
 [node name="Brainbar" type="Control" parent="."]
@@ -947,19 +959,18 @@ margin_left = 215.685
 margin_top = 5.33371
 margin_right = 299.685
 margin_bottom = 65.3337
-script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="Brainbar"]
+[node name="BrainProgress" type="TextureProgress" parent="Brainbar"]
 margin_left = 42.6663
 margin_top = 56.584
 margin_right = 90.6663
 margin_bottom = 64.584
 rect_rotation = -89.9999
-max_value = 10.0
-texture_under = ExtResource( 17 )
+value = 65.0
+texture_under = SubResource( 43 )
 texture_progress = ExtResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
