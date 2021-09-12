@@ -7,6 +7,7 @@ export var MAX_SPEED = 80
 var velocity = Vector2.ZERO
 var input_vector = Vector2.ZERO
 var is_holding_crate = false
+var is_player_2 = false
 
 enum {
   MOVE,
@@ -20,8 +21,9 @@ onready var interactionArea = $InteractionArea/InteractionShape
 onready var playerSprite = $AnimatedSprite
 
 func _ready():
-  pass
-
+  if name == "Player2":
+    is_player_2 = true
+    
 func _physics_process(delta):
   set_animation()
   match state:
@@ -32,10 +34,16 @@ func _physics_process(delta):
     DIALOG:
       dialog_state()
       
-  if Input.is_action_pressed("ui_select"):
-    interactionArea.disabled = false
+  if is_player_2:
+    if Input.is_action_pressed("ui_select_2"):
+      interactionArea.disabled = false
+    else:
+      interactionArea.disabled = true
   else:
-    interactionArea.disabled = true
+    if Input.is_action_pressed("ui_select"):
+      interactionArea.disabled = false
+    else:
+      interactionArea.disabled = true
   
 
   
@@ -43,10 +51,15 @@ func _physics_process(delta):
   
 func move_state(delta):
   # set the strength of rotation depending on the users input
-  rotation_degrees += Input.get_action_strength("ui_right") * 2
-  rotation_degrees -= Input.get_action_strength("ui_left") * 2
-
-  input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+  if is_player_2:
+    rotation_degrees += Input.get_action_strength("ui_right_2") * 2
+    rotation_degrees -= Input.get_action_strength("ui_left_2") * 2
+    input_vector.y = Input.get_action_strength("ui_down_2") - Input.get_action_strength("ui_up_2")
+  else:
+    rotation_degrees += Input.get_action_strength("ui_right") * 2
+    rotation_degrees -= Input.get_action_strength("ui_left") * 2
+    input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+  
   input_vector = input_vector.normalized()
 
   if input_vector != Vector2.ZERO:

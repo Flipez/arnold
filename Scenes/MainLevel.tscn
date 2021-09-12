@@ -728,7 +728,7 @@ rotation = -1.57079
 shape = SubResource( 24 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 226.38, 85.5949 )
+position = Vector2( 200, 104 )
 
 [node name="CrateSpawnerTimer" type="Timer" parent="."]
 wait_time = 10.0
