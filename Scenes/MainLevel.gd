@@ -39,6 +39,13 @@ func set_speed_scale(scale):
   CRATE_SPEED = 5 * scale
   for crate in $Crates.get_children():
     crate.SPEED = 5 * scale
+  # wait time for sporning of the next crate:
+  # a * exp(-b*scale) + c
+  # where:
+  # c is the minimal wait time
+  # a*1.1 + c is the spawn time of the very first crate 
+  # b indicates how fast the function goes to the minimal wait time (direct proportional)
+  $CrateSpawnerTimer.wait_time = 5 * exp(-0.2*scale) + 2.5
 
 func new_score(score):
   set_speed_scale(1 + score / 10)
