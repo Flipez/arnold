@@ -37,12 +37,12 @@
 [ext_resource path="res://depot/crossfit-3409475_3.png" type="Texture" id=35]
 [ext_resource path="res://depot/silhouette_2.png" type="Texture" id=36]
 
-[sub_resource type="Gradient" id=1]
+[sub_resource type="Gradient" id=54]
 offsets = PoolRealArray( 0, 0.996528, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 0.680556, 0.680556, 0.680556, 1, 1, 1, 1, 1 )
 
 [sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
+gradient = SubResource( 54 )
 
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 30 )
@@ -858,6 +858,7 @@ texture = ExtResource( 32 )
 position = Vector2( -11132.4, 5214.6 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 49 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
@@ -1097,7 +1098,6 @@ stream = ExtResource( 15 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lungbar"]
 position = Vector2( 29.0328, 46.052 )
 frames = SubResource( 33 )
-frame = 1
 playing = true
 
 [node name="Heartbar" type="Control" parent="."]
@@ -1235,6 +1235,7 @@ __meta__ = {
 }
 
 [node name="skin_picture2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 152.046, 120.293 )
 scale = Vector2( 0.125687, 0.149499 )
 texture = ExtResource( 28 )
