@@ -855,14 +855,13 @@ scale = Vector2( 8.18071, 9.41737 )
 texture = ExtResource( 32 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
-position = Vector2( -11607.1, 5689.24 )
+position = Vector2( -11132.4, 5214.6 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 49 )
-frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
-position = Vector2( 9981.56, 1828.68 )
+position = Vector2( 10252.8, 2845.76 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 52 )
 playing = true
@@ -1098,6 +1097,7 @@ stream = ExtResource( 15 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lungbar"]
 position = Vector2( 29.0328, 46.052 )
 frames = SubResource( 33 )
+frame = 1
 playing = true
 
 [node name="Heartbar" type="Control" parent="."]
@@ -1244,8 +1244,9 @@ anims/get_transparent = SubResource( 53 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 rotation = -2.87979
-offset = Vector2( 160, 120 )
+offset = Vector2( 0, 3000 )
 current = true
+zoom = Vector2( 100, 100 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 anims/zoom_in = SubResource( 44 )
