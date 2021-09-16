@@ -10,6 +10,8 @@ var CRATE_SPEED = 5
 func _ready():
   crateTimer.start()
   Score.connect("new_score", self, "new_score")
+  $Camera2D/AnimationPlayer.play("zoom_in")
+  $skin_picture2/AnimationPlayer.play("get_transparent")
   
 func _process(delta):
   if Input.is_action_pressed("ui_accept") && !player_2_joined:

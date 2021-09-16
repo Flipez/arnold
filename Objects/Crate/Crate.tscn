@@ -109,7 +109,7 @@ position = Vector2( -1.13249e-06, 0.0525572 )
 scale = Vector2( 0.684664, 0.684664 )
 frames = SubResource( 11 )
 animation = "air"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollectAudioPlayer" type="AudioStreamPlayer" parent="."]
