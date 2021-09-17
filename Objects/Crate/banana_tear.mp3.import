@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/banana_tear.mp3-da2ee00df6e5ad977bd5ef2f41603563.mp3str"
+
+[deps]
+
+source_file="res://Objects/Crate/banana_tear.mp3"
+dest_files=[ "res://.import/banana_tear.mp3-da2ee00df6e5ad977bd5ef2f41603563.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

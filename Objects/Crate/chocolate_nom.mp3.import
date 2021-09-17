@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/chocolate_nom.mp3-fe58bfe694c596e106f3d1c3449fc250.mp3str"
+
+[deps]
+
+source_file="res://Objects/Crate/chocolate_nom.mp3"
+dest_files=[ "res://.import/chocolate_nom.mp3-fe58bfe694c596e106f3d1c3449fc250.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

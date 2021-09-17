@@ -26,7 +26,7 @@ func _ready():
     position.y = -8
     
   rng.randomize()
-  var random_number = rng.randi_range(0, 10)
+  var random_number = rng.randi_range(9, 10)
   
   match random_number:
     0,1,2,3:
@@ -80,8 +80,8 @@ func move_on_belt(delta):
 
 func stick_to_player(_delta):
   if type_id != types.AIR:
-    position.x = player.position.x + cos(player.rotation - PI/2) * 13
-    position.y = player.position.y + sin(player.rotation - PI/2) * 13
+    position.x = player.position.x + cos(player.rotation - PI/2) * 15
+    position.y = player.position.y + sin(player.rotation - PI/2) * 15
     look_at(player.position)
     rotation_degrees -= 90
   else:
@@ -111,10 +111,37 @@ func destroy():
 func collect():
   $InteractionArea/CollisionShape2D.disabled = true
   visible = false
-  $CollectAudioPlayer.play()
+  if type_id == types.BEER:
+    $CollectBeerPlayer.play()
+  elif type_id == types.COFFEE:
+    $CollectCoffeePlayer.play()
+  elif type_id == types.AIR:
+    $CollectBalloonPlayer.play() 
+  elif type_id == types.BANANA:
+    $CollectBananaPlayer.play()
+  elif type_id == types.CHOCOLATE:
+    $CollectChocolatePlayer.play()
+  else:
+    $CollectAudioPlayer.play()
 
 func _on_CollectAudioPlayer_finished():
   print("collected")
   emit_signal("collected")
   Score.increase(5)
   queue_free()
+
+
+func _on_CollectBeerPlayer_finished():
+  _on_CollectAudioPlayer_finished()
+
+func _on_CollectCoffeePlayer_finished():
+  _on_CollectAudioPlayer_finished()
+
+func _on_CollectBalloonPlayer_finished():
+  _on_CollectAudioPlayer_finished()
+
+func _on_AudioStreamPlayer_finished():
+  _on_CollectAudioPlayer_finished()
+
+func _on_CollectChocolatePlayer_finished():
+  _on_CollectAudioPlayer_finished()
