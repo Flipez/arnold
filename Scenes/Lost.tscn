@@ -215,6 +215,7 @@ playing = true
 position = Vector2( 10252.8, 2845.76 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="Arnold" type="Node2D" parent="."]
