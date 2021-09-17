@@ -52,12 +52,12 @@ func _physics_process(delta):
 func move_state(delta):
   # set the strength of rotation depending on the users input
   if is_player_2:
-    rotation_degrees += Input.get_action_strength("ui_right_2") * 2
-    rotation_degrees -= Input.get_action_strength("ui_left_2") * 2
+    rotation_degrees += Input.get_action_strength("ui_right_2") * 3
+    rotation_degrees -= Input.get_action_strength("ui_left_2") * 3
     input_vector.y = Input.get_action_strength("ui_down_2") - Input.get_action_strength("ui_up_2")
   else:
-    rotation_degrees += Input.get_action_strength("ui_right") * 2
-    rotation_degrees -= Input.get_action_strength("ui_left") * 2
+    rotation_degrees += Input.get_action_strength("ui_right") * 3
+    rotation_degrees -= Input.get_action_strength("ui_left") * 3
     input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
   
   input_vector = input_vector.normalized()

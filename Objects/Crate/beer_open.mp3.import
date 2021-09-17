@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/beer_open.mp3-836285e864ff52c6c6aaa40d370d7fee.mp3str"
+
+[deps]
+
+source_file="res://Objects/Crate/beer_open.mp3"
+dest_files=[ "res://.import/beer_open.mp3-836285e864ff52c6c6aaa40d370d7fee.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/coffee_sip.mp3-f1c4302eb5fe20d524010e2d6ec016a6.mp3str"
+
+[deps]
+
+source_file="res://Objects/Crate/coffee_sip.mp3"
+dest_files=[ "res://.import/coffee_sip.mp3-f1c4302eb5fe20d524010e2d6ec016a6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

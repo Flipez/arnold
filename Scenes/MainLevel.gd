@@ -33,8 +33,12 @@ func _on_CrateSpawnerTimer_timeout():
     crate.connect("collected", $Heartbar, "crate_collected")
   if crate.type_string == "banana":
     crate.connect("collected", $Musclebar, "crate_collected")
-  if crate.type_string == "coffee" or crate.type_string == "beer":
+  if crate.type_string == "coffee":
     crate.connect("collected", $Brainbar, "crate_collected")
+    crate.connect("collected", self, "coffee_collected")
+  if crate.type_string == "beer":
+    crate.connect("collected", $Brainbar, "crate_collected")
+    crate.connect("collected", self, "beer_collected")
   
 func set_speed_scale(scale):
   $Belt.set_speed(scale)
@@ -51,3 +55,32 @@ func set_speed_scale(scale):
 
 func new_score(score):
   set_speed_scale(1 + score / 10)
+  
+func coffee_collected():
+  $CoffeeShaderTimer.start()
+  $CoffeeShader.visible = true
+  $BeerShader.visible = false
+  
+  $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", 1, 1.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+  $BackgroundAudioPlayer/Tween.start()
+  $Player.MAX_SPEED = 160
+
+  
+func beer_collected():
+  $BeerShaderTimer.start()
+  $CoffeeShader.visible = false
+  $BeerShader.visible = true
+  
+  $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", 1, 0.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+  $BackgroundAudioPlayer/Tween.start()
+  $Player.MAX_SPEED = 40
+
+func _on_CoffeeShaderTimer_timeout():
+  $CoffeeShader.visible = false
+  $BackgroundAudioPlayer.pitch_scale = 1
+  $Player.MAX_SPEED = 80
+
+func _on_BeerShaderTimer_timeout():
+  $BeerShader.visible = false
+  $BackgroundAudioPlayer.pitch_scale = 1
+  $Player.MAX_SPEED = 80

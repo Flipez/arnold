@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=96 format=2]
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -36,6 +36,10 @@
 [ext_resource path="res://depot/crossfit-3409475_2.png" type="Texture" id=34]
 [ext_resource path="res://depot/crossfit-3409475_3.png" type="Texture" id=35]
 [ext_resource path="res://depot/silhouette_2.png" type="Texture" id=36]
+[ext_resource path="res://Shader/Coffee.gdshader" type="Shader" id=37]
+[ext_resource path="res://Shader/Beer.gdshader" type="Shader" id=38]
+[ext_resource path="res://Sounds/background.mp3" type="AudioStream" id=39]
+[ext_resource path="res://Objects/Crate/fart.mp3" type="AudioStream" id=40]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.996528, 1 )
@@ -771,8 +775,21 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[sub_resource type="Animation" id=52]
-resource_name = "get_transparent"
+[sub_resource type="ShaderMaterial" id=53]
+shader = ExtResource( 38 )
+shader_param/seed = 81.0
+shader_param/power = 0.003
+shader_param/speed = 0.0
+
+[sub_resource type="ShaderMaterial" id=52]
+shader = ExtResource( 37 )
+shader_param/shake_power = 0.0003
+shader_param/shake_rate = 0.2
+shader_param/shake_speed = 5.0
+shader_param/shake_block_size = 30.5
+shader_param/shake_color_rate = 0.01
+
+[sub_resource type="Animation" id=54]
 length = 4.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
@@ -787,7 +804,7 @@ tracks/0/keys = {
 "values": [ true, true, false ]
 }
 
-[sub_resource type="Animation" id=53]
+[sub_resource type="Animation" id=55]
 length = 3.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:zoom")
@@ -821,7 +838,7 @@ script = ExtResource( 4 )
 [node name="Background" type="Node2D" parent="."]
 
 [node name="Sprite5" type="Sprite" parent="Background"]
-position = Vector2( 171.758, 75.4061 )
+position = Vector2( 168, 72 )
 rotation = 0.371637
 scale = Vector2( 28.8, 44486.1 )
 texture = SubResource( 2 )
@@ -864,7 +881,6 @@ playing = true
 position = Vector2( 10252.8, 2845.76 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1067,7 +1083,7 @@ __meta__ = {
 }
 
 [node name="BarIncreasePlayer" type="AudioStreamPlayer" parent="Shitbar"]
-stream = ExtResource( 15 )
+stream = ExtResource( 40 )
 
 [node name="Lungbar" type="Control" parent="."]
 margin_left = -2.0
@@ -1211,8 +1227,9 @@ __meta__ = {
 wait_time = 3.0
 autostart = true
 
-[node name="CoffeeShader" type="ColorRect" parent="."]
+[node name="BeerShader" type="ColorRect" parent="."]
 visible = false
+material = SubResource( 53 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 328.0
@@ -1222,8 +1239,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BeerShader" type="ColorRect" parent="."]
+[node name="CoffeeShader" type="ColorRect" parent="."]
 visible = false
+material = SubResource( 52 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 328.0
@@ -1240,7 +1258,7 @@ scale = Vector2( 0.125687, 0.149499 )
 texture = ExtResource( 28 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="skin_picture2"]
-anims/get_transparent = SubResource( 52 )
+anims/get_transparent = SubResource( 54 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 rotation = -2.87979
@@ -1249,10 +1267,27 @@ current = true
 zoom = Vector2( 100, 100 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
-anims/zoom_in = SubResource( 53 )
+anims/zoom_in = SubResource( 55 )
+
+[node name="BeerShaderTimer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[node name="CoffeeShaderTimer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[node name="BackgroundAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 39 )
+volume_db = -8.078
+autoplay = true
+
+[node name="Tween" type="Tween" parent="BackgroundAudioPlayer"]
 
 [connection signal="timeout" from="CrateSpawnerTimer" to="." method="_on_CrateSpawnerTimer_timeout"]
 [connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Heartbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Brainbar" method="_on_Timer_timeout"]
+[connection signal="timeout" from="BeerShaderTimer" to="." method="_on_BeerShaderTimer_timeout"]
+[connection signal="timeout" from="CoffeeShaderTimer" to="." method="_on_CoffeeShaderTimer_timeout"]
