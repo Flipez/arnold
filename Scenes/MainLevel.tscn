@@ -1084,6 +1084,7 @@ __meta__ = {
 
 [node name="BarIncreasePlayer" type="AudioStreamPlayer" parent="Shitbar"]
 stream = ExtResource( 40 )
+volume_db = 7.068
 
 [node name="Lungbar" type="Control" parent="."]
 margin_left = -2.0
@@ -1114,6 +1115,7 @@ stream = ExtResource( 15 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lungbar"]
 position = Vector2( 29.0328, 46.052 )
 frames = SubResource( 41 )
+frame = 1
 playing = true
 
 [node name="Heartbar" type="Control" parent="."]
