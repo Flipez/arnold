@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://depot/weightlifter-3944725.png" type="Texture" id=1]
 [ext_resource path="res://depot/crossfit-3409475.png" type="Texture" id=2]
@@ -21,48 +21,64 @@
 offsets = PoolRealArray( 0, 0.996528, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 0.680556, 0.680556, 0.680556, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=52]
+[sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 2153, 1920 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 2153, 1920 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 2153, 1920 )
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 2153, 1920 )
 
-[sub_resource type="SpriteFrames" id=53]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 3.0
 } ]
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 15 )
 region = Rect2( 0, 0, 947, 806 )
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 947, 806 )
 
-[sub_resource type="SpriteFrames" id=54]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 50 ), SubResource( 51 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.2
 } ]
+
+[sub_resource type="Animation" id=11]
+resource_name = "Falling"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("hip/head/arm_right/hand_right:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 236.6, 169.7 ]
+}
 
 [node name="Node2D" type="Node2D"]
 
@@ -72,7 +88,7 @@ animations = [ {
 position = Vector2( 171.758, 75.4061 )
 rotation = 0.371637
 scale = Vector2( 28.8, 44486.1 )
-texture = SubResource( 52 )
+texture = SubResource( 2 )
 
 [node name="greyscreen" type="ColorRect" parent="Background"]
 visible = false
@@ -105,57 +121,108 @@ texture = ExtResource( 16 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
 position = Vector2( -11132.4, 5214.6 )
 scale = Vector2( 6.67318, 6.50298 )
-frames = SubResource( 53 )
+frames = SubResource( 7 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 10252.8, 2845.76 )
 scale = Vector2( 12.5325, 12.2181 )
-frames = SubResource( 54 )
+frames = SubResource( 10 )
 playing = true
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Arnold" type="Node2D" parent="."]
 position = Vector2( 0, 3000 )
 
-[node name="hip" type="Sprite" parent="Node2D"]
+[node name="hip" type="Sprite" parent="Arnold"]
 position = Vector2( -57.0195, 0 )
 scale = Vector2( 40, 40 )
 texture = ExtResource( 11 )
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="head" type="Sprite" parent="Node2D/hip"]
+[node name="head" type="Sprite" parent="Arnold/hip"]
 position = Vector2( 14.3707, -67.0119 )
 texture = ExtResource( 5 )
 offset = Vector2( 0.952862, -84.7972 )
 __meta__ = {
+"_edit_bone_": true,
 "_editor_description_": "	"
 }
 
-[node name="arm_right" type="Sprite" parent="Node2D/hip/head"]
+[node name="arm_right" type="Sprite" parent="Arnold/hip/head"]
 position = Vector2( 49.8903, -48.4649 )
 texture = ExtResource( 6 )
 offset = Vector2( 54.7631, -3.19085 )
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="hand_right" type="Sprite" parent="Node2D/hip/head/arm_right"]
+[node name="hand_right" type="Sprite" parent="Arnold/hip/head/arm_right"]
 position = Vector2( 88.3771, -34.9232 )
+rotation = 2.96182
 texture = ExtResource( 3 )
 offset = Vector2( -21.7379, -33.8541 )
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="arm_left" type="Sprite" parent="Node2D/hip/head"]
+[node name="Position2D" type="Position2D" parent="Arnold/hip/head/arm_right/hand_right"]
+position = Vector2( -20.9763, -67.1241 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="arm_left" type="Sprite" parent="Arnold/hip/head"]
 position = Vector2( -26.0142, -49.534 )
 texture = ExtResource( 13 )
 offset = Vector2( -62.4791, -7.82352 )
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="hand_left" type="Sprite" parent="Node2D/hip/head/arm_left"]
+[node name="hand_left" type="Sprite" parent="Arnold/hip/head/arm_left"]
 position = Vector2( -90.5153, -36.3486 )
 texture = ExtResource( 12 )
 offset = Vector2( 2.49451, -29.9342 )
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="leg_right" type="Sprite" parent="Node2D/hip"]
+[node name="Position2D" type="Position2D" parent="Arnold/hip/head/arm_left/hand_left"]
+position = Vector2( 11.9865, -65.3262 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="leg_right" type="Sprite" parent="Arnold/hip"]
 position = Vector2( 36.1086, 60.6743 )
 texture = ExtResource( 4 )
 offset = Vector2( 13.7818, 86.8585 )
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="leg_left" type="Sprite" parent="Node2D/hip"]
+[node name="Position2D" type="Position2D" parent="Arnold/hip/leg_right"]
+position = Vector2( 30.2658, 180.396 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="leg_left" type="Sprite" parent="Arnold/hip"]
 position = Vector2( -21.978, 55.6853 )
 texture = ExtResource( 10 )
 offset = Vector2( 0.240065, 81.8695 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Position2D" type="Position2D" parent="Arnold/hip/leg_left"]
+position = Vector2( 35.9594, 175.901 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Arnold"]
+anims/Falling = SubResource( 11 )
