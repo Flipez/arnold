@@ -22,12 +22,12 @@
 [ext_resource path="res://Scenes/Lost/Sprites/toilet_door.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/Lost/Sprites/toilet-modified.png" type="Texture" id=21]
 
-[sub_resource type="Gradient" id=1]
+[sub_resource type="Gradient" id=11]
 offsets = PoolRealArray( 0, 0.996528, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 0.680556, 0.680556, 0.680556, 1, 1, 1, 1, 1 )
 
 [sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
+gradient = SubResource( 11 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
@@ -74,25 +74,13 @@ script = ExtResource( 1 )
 
 [node name="Background" type="Node2D" parent="."]
 
-[node name="Sprite5" type="Sprite" parent="Background"]
-position = Vector2( 171.758, 75.4061 )
+[node name="background_grey" type="Sprite" parent="Background"]
+position = Vector2( 8024.65, 1030.61 )
 rotation = 0.371637
-scale = Vector2( 28.8, 44486.1 )
+scale = Vector2( 38.4993, 61442.7 )
 texture = SubResource( 2 )
 
-[node name="greyscreen" type="ColorRect" parent="Background"]
-visible = false
-margin_left = -16000.0
-margin_top = -9000.0
-margin_right = 16000.0
-margin_bottom = 15000.0
-rect_pivot_offset = Vector2( -20423.5, -484.574 )
-color = Color( 0.482353, 0.482353, 0.482353, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite3" type="Sprite" parent="Background"]
+[node name="weightlifter" type="Sprite" parent="Background"]
 position = Vector2( -3036.57, 2493.15 )
 scale = Vector2( 5.3108, 4.65644 )
 texture = ExtResource( 5 )
@@ -103,23 +91,22 @@ position = Vector2( 241.011, 2814.82 )
 scale = Vector2( 37.4669, 41.158 )
 texture = ExtResource( 17 )
 
-[node name="Sprite4" type="Sprite" parent="Background"]
+[node name="barbell" type="Sprite" parent="Background"]
 position = Vector2( 7872, 11834 )
 scale = Vector2( 8.18071, 9.41737 )
 texture = ExtResource( 16 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
+[node name="kettlebell" type="AnimatedSprite" parent="Background"]
 position = Vector2( -11132.4, 5214.6 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
+[node name="sportsteam" type="AnimatedSprite" parent="Background"]
 position = Vector2( 10252.8, 2845.76 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="toilet" type="Sprite" parent="Background"]
@@ -129,6 +116,11 @@ texture = ExtResource( 21 )
 
 [node name="Arnold" type="Node2D" parent="."]
 position = Vector2( 0, 3000 )
+
+[node name="Camera2D" type="Camera2D" parent="Arnold"]
+position = Vector2( 0, -3000 )
+current = true
+zoom = Vector2( 100, 100 )
 
 [node name="hip" type="Sprite" parent="Arnold"]
 position = Vector2( -57.0195, 0 )
@@ -222,11 +214,6 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Arnold"]
 anims/Falling = ExtResource( 12 )
 anims/Toilet = ExtResource( 19 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, 3000 )
-current = true
-zoom = Vector2( 100, 100 )
 
 [node name="door" type="Sprite" parent="."]
 position = Vector2( 31373, 2665.94 )
