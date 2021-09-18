@@ -11,12 +11,12 @@ config_version=4
 [application]
 
 config/name="InsideTheMachine"
-run/main_scene="res://Scenes/Keybindings.tscn"
+run/main_scene="res://Scenes/Keybindings/Keybindings.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Score="*res://Scenes/Score.gd"
+Score="*res://Scenes/Main/Score.gd"
 
 [display]
 
