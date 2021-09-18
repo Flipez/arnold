@@ -914,6 +914,7 @@ playing = true
 position = Vector2( 10252.8, 2845.76 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1323,9 +1324,9 @@ autoplay = true
 [node name="Tween" type="Tween" parent="BackgroundAudioPlayer"]
 
 [connection signal="timeout" from="CrateSpawnerTimer" to="." method="_on_CrateSpawnerTimer_timeout"]
-[connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Heartbar" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Brainbar" method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="Camera2D/Camera_zoom_in" to="." method="_on_Camera_zoom_in_animation_finished"]
 [connection signal="timeout" from="BeerShaderTimer" to="." method="_on_BeerShaderTimer_timeout"]

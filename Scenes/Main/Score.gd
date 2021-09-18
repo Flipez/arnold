@@ -1,6 +1,7 @@
 extends Node
 
 var score = 0
+var toilet = false
 
 signal new_score
 

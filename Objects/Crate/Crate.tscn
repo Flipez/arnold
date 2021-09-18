@@ -29,11 +29,11 @@ region = Rect2( 75, 156, 25, 26 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
-region = Rect2( 572, 260, 22, 26 )
+region = Rect2( 494, 575, 26, 23 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 5 )
-region = Rect2( 494, 575, 26, 23 )
+region = Rect2( 572, 260, 22, 26 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 8 )
@@ -65,12 +65,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "beer",
+"name": "banana",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
-"name": "banana",
+"name": "beer",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
@@ -114,7 +114,7 @@ position = Vector2( -1.13249e-06, 0.0525572 )
 scale = Vector2( 0.684664, 0.684664 )
 frames = SubResource( 11 )
 animation = "air"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollectAudioPlayer" type="AudioStreamPlayer" parent="."]

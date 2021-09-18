@@ -60,7 +60,7 @@ func coffee_collected():
   $CoffeeShader.visible = true
   $BeerShader.visible = false
   
-  $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", 1, 1.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+  $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", $BackgroundAudioPlayer.pitch_scale, 1.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
   $BackgroundAudioPlayer/Tween.start()
   $Player.MAX_SPEED = 160
 
@@ -70,22 +70,21 @@ func beer_collected():
   $CoffeeShader.visible = false
   $BeerShader.visible = true
   
-  $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", 1, 0.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+  $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", $BackgroundAudioPlayer.pitch_scale, 0.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
   $BackgroundAudioPlayer/Tween.start()
-  $Player.MAX_SPEED = 40
+  $Player.MAX_SPEED = 20
 
 func _on_CoffeeShaderTimer_timeout():
   $CoffeeShader.visible = false
-  $BackgroundAudioPlayer.pitch_scale = 1
-  $Player.MAX_SPEED = 80
+  if $BackgroundAudioPlayer.pitch_scale == 1.5:
+    $BackgroundAudioPlayer.pitch_scale = 1
+    $Player.MAX_SPEED = 80
 
 func _on_BeerShaderTimer_timeout():
   $BeerShader.visible = false
-  $BackgroundAudioPlayer.pitch_scale = 1
-  $Player.MAX_SPEED = 80
-
-
-
+  if $BackgroundAudioPlayer.pitch_scale == 0.5:
+    $BackgroundAudioPlayer.pitch_scale = 1
+    $Player.MAX_SPEED = 80
 
 func _on_Camera_zoom_in_animation_finished(_anim_name):
   print("animation finished")
