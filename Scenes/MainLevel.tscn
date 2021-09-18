@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=95 format=2]
 
 [ext_resource path="res://Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -162,9 +162,6 @@ animations = [ {
 2/shapes = [  ]
 2/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=13]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
-
 [sub_resource type="ConvexPolygonShape2D" id=14]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
@@ -194,16 +191,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 13 )
 0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 13 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
 0/z_index = 0
 1/name = "tube.png 1"
 1/texture = ExtResource( 25 )
@@ -775,13 +765,13 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=53]
+[sub_resource type="ShaderMaterial" id=52]
 shader = ExtResource( 38 )
 shader_param/seed = 81.0
 shader_param/power = 0.003
 shader_param/speed = 0.0
 
-[sub_resource type="ShaderMaterial" id=52]
+[sub_resource type="ShaderMaterial" id=53]
 shader = ExtResource( 37 )
 shader_param/shake_power = 0.0003
 shader_param/shake_rate = 0.2
@@ -1115,7 +1105,6 @@ stream = ExtResource( 15 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lungbar"]
 position = Vector2( 29.0328, 46.052 )
 frames = SubResource( 41 )
-frame = 1
 playing = true
 
 [node name="Heartbar" type="Control" parent="."]
@@ -1231,7 +1220,7 @@ autostart = true
 
 [node name="BeerShader" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 53 )
+material = SubResource( 52 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 328.0
@@ -1243,7 +1232,7 @@ __meta__ = {
 
 [node name="CoffeeShader" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 52 )
+material = SubResource( 53 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 328.0
@@ -1287,9 +1276,9 @@ autoplay = true
 [node name="Tween" type="Tween" parent="BackgroundAudioPlayer"]
 
 [connection signal="timeout" from="CrateSpawnerTimer" to="." method="_on_CrateSpawnerTimer_timeout"]
+[connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Heartbar" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Brainbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="BeerShaderTimer" to="." method="_on_BeerShaderTimer_timeout"]
 [connection signal="timeout" from="CoffeeShaderTimer" to="." method="_on_CoffeeShaderTimer_timeout"]

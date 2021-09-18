@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends KinematicBody2D
 
 export var SPEED = 5
 var hold_by_player = false
@@ -60,6 +60,9 @@ func _process(delta):
         collect()
   if never_touched == false && hold_by_player == false && out_of_play_area():
     destroy()
+  
+  if never_touched == false:
+    move_and_slide(Vector2.ZERO)
 
 
 func move_on_belt(delta):
@@ -92,7 +95,7 @@ func out_of_play_area():
   return(position.y < 72 || position.y > 232 || position.x < 40 || position.x > 350)
 
 func _on_InteractionArea_area_entered(area):
-  if area.get_parent().is_in_group("players"):
+  if area.get_parent().is_in_group("players") && !area.get_parent().is_holding_crate:
     hold_by_player = true
     never_touched = false
     player = area.get_parent()

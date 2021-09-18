@@ -17,7 +17,7 @@
 extents = Vector2( 5.6731, 5.69607 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 8 )
+extents = Vector2( 5.33092, 5.37903 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
@@ -28,28 +28,28 @@ atlas = ExtResource( 5 )
 region = Rect2( 75, 156, 25, 26 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 5 )
-region = Rect2( 494, 575, 26, 23 )
-
-[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 8 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 8 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 8 )
 region = Rect2( 48, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
 region = Rect2( 572, 260, 22, 26 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 494, 575, 26, 23 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
@@ -63,23 +63,23 @@ animations = [ {
 "name": "coffee",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ) ],
-"loop": true,
-"name": "banana",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "air",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 10 ) ],
+"frames": [ SubResource( 9 ) ],
 "loop": true,
 "name": "beer",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "banana",
+"speed": 5.0
 } ]
 
-[node name="Crate" type="StaticBody2D" groups=[
+[node name="Crate" type="KinematicBody2D" groups=[
 "collectables",
 ]]
 collision_layer = 33
@@ -114,7 +114,7 @@ position = Vector2( -1.13249e-06, 0.0525572 )
 scale = Vector2( 0.684664, 0.684664 )
 frames = SubResource( 11 )
 animation = "air"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollectAudioPlayer" type="AudioStreamPlayer" parent="."]
