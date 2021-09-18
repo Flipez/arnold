@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scenes/Lost/Lost.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Lost/Sprites/Arnold-Schwarzenegger_arm_right.png" type="Texture" id=2]
@@ -21,13 +21,14 @@
 [ext_resource path="res://Scenes/Lost/ToiletAnimation.tres" type="Animation" id=19]
 [ext_resource path="res://Scenes/Lost/Sprites/toilet_door.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/Lost/Sprites/toilet-modified.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/Lost/Sprites/blur-gym-and-fitness.jpg" type="Texture" id=22]
 
-[sub_resource type="Gradient" id=11]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.996528, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 0.680556, 0.680556, 0.680556, 1, 1, 1, 1, 1 )
 
 [sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 11 )
+gradient = SubResource( 1 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
@@ -80,6 +81,19 @@ rotation = 0.371637
 scale = Vector2( 38.4993, 61442.7 )
 texture = SubResource( 2 )
 
+[node name="background" type="Sprite" parent="Background"]
+position = Vector2( -16955.6, -9047.51 )
+scale = Vector2( 6.39701, 6.96645 )
+texture = ExtResource( 22 )
+offset = Vector2( 2502.4, 1653.99 )
+
+[node name="background2" type="Sprite" parent="Background"]
+position = Vector2( 16611.8, -8772.66 )
+scale = Vector2( 6.63743, 6.92982 )
+texture = ExtResource( 22 )
+offset = Vector2( 2502.4, 1653.99 )
+flip_h = true
+
 [node name="weightlifter" type="Sprite" parent="Background"]
 position = Vector2( -3036.57, 2493.15 )
 scale = Vector2( 5.3108, 4.65644 )
@@ -107,6 +121,7 @@ playing = true
 position = Vector2( 10252.8, 2845.76 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="toilet" type="Sprite" parent="Background"]
@@ -118,7 +133,7 @@ texture = ExtResource( 21 )
 position = Vector2( 0, 3000 )
 
 [node name="Camera2D" type="Camera2D" parent="Arnold"]
-position = Vector2( 0, -3000 )
+position = Vector2( 0, 3000 )
 current = true
 zoom = Vector2( 100, 100 )
 

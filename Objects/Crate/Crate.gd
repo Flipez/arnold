@@ -26,7 +26,7 @@ func _ready():
     position.y = -8
     
   rng.randomize()
-  var random_number = rng.randi_range(9, 10)
+  var random_number = rng.randi_range(0, 10)
   
   match random_number:
     0,1,2,3:
