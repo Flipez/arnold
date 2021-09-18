@@ -170,16 +170,40 @@ tracks/7/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.7, 0.7 ) ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("hip/leg_right/Position2D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 30.2658, 180.396 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Camera2D:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 4.9, 8.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( -16000, 0 ) ]
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 17 )
 
 [node name="Background" type="Node2D" parent="."]
 
-[node name="Sprite5" type="Sprite" parent="Background"]
-position = Vector2( 171.758, 75.4061 )
+[node name="background_grey" type="Sprite" parent="Background"]
+position = Vector2( 7490.92, 2228.1 )
 rotation = 0.371637
-scale = Vector2( 28.8, 44486.1 )
+scale = Vector2( 39.1907, 55994.3 )
 texture = SubResource( 2 )
 
 [node name="greyscreen" type="ColorRect" parent="Background"]
@@ -194,7 +218,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite3" type="Sprite" parent="Background"]
+[node name="weightlifter" type="Sprite" parent="Background"]
 position = Vector2( -3036.57, 2493.15 )
 scale = Vector2( 5.3108, 4.65644 )
 texture = ExtResource( 1 )
@@ -205,22 +229,22 @@ position = Vector2( 241.011, 2814.82 )
 scale = Vector2( 37.4669, 41.158 )
 texture = ExtResource( 14 )
 
-[node name="Sprite4" type="Sprite" parent="Background"]
+[node name="barbell" type="Sprite" parent="Background"]
 position = Vector2( 7872, 11834 )
 scale = Vector2( 8.18071, 9.41737 )
 texture = ExtResource( 16 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Background"]
+[node name="kettlebell" type="AnimatedSprite" parent="Background"]
 position = Vector2( -11132.4, 5214.6 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 7 )
-frame = 2
 playing = true
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
+[node name="sportsgroup" type="AnimatedSprite" parent="Background"]
 position = Vector2( 10252.8, 2845.76 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="toilet" type="Sprite" parent="Background"]
@@ -229,16 +253,13 @@ scale = Vector2( 17.0193, 15.0209 )
 texture = ExtResource( 19 )
 
 [node name="Arnold" type="Node2D" parent="."]
-position = Vector2( 29200.5, 2202.58 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 0, 3000 )
 __meta__ = {
 "_editor_description_": "		"
 }
 
 [node name="Camera2D" type="Camera2D" parent="Arnold"]
-position = Vector2( -8136.67, -4268.48 )
-scale = Vector2( 1.42857, 1.42857 )
-offset = Vector2( 0, 3000 )
+offset = Vector2( 3000, 0 )
 current = true
 zoom = Vector2( 100, 100 )
 
@@ -262,7 +283,6 @@ __meta__ = {
 
 [node name="arm_right" type="Sprite" parent="Arnold/hip/head"]
 position = Vector2( 49.8903, -48.4649 )
-rotation = 3.28122
 texture = ExtResource( 6 )
 offset = Vector2( 54.7631, -3.19085 )
 __meta__ = {
@@ -285,7 +305,6 @@ __meta__ = {
 
 [node name="arm_left" type="Sprite" parent="Arnold/hip/head"]
 position = Vector2( -26.0142, -49.534 )
-rotation = -2.81347
 texture = ExtResource( 13 )
 offset = Vector2( -62.4791, -7.82352 )
 __meta__ = {
@@ -308,6 +327,7 @@ __meta__ = {
 
 [node name="leg_right" type="Sprite" parent="Arnold/hip"]
 position = Vector2( 36.1086, 60.6743 )
+rotation = -0.0104354
 texture = ExtResource( 4 )
 offset = Vector2( 13.7818, 86.8585 )
 __meta__ = {
@@ -317,12 +337,14 @@ __meta__ = {
 
 [node name="Position2D" type="Position2D" parent="Arnold/hip/leg_right"]
 position = Vector2( 30.2658, 180.396 )
+rotation = -0.344315
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="leg_left" type="Sprite" parent="Arnold/hip"]
 position = Vector2( -21.978, 55.6853 )
+rotation = -0.0330735
 texture = ExtResource( 10 )
 offset = Vector2( 0.240065, 81.8695 )
 __meta__ = {
@@ -341,6 +363,6 @@ anims/Falling = SubResource( 11 )
 anims/Toilet = SubResource( 12 )
 
 [node name="door" type="Sprite" parent="."]
-position = Vector2( 30582.8, 2701.86 )
-scale = Vector2( 25.4499, 15.0008 )
+position = Vector2( 31373, 2665.94 )
+scale = Vector2( 18.3393, 15.3161 )
 texture = ExtResource( 18 )

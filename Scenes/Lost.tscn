@@ -208,14 +208,13 @@ texture = ExtResource( 16 )
 position = Vector2( -11132.4, 5214.6 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 7 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Background"]
 position = Vector2( 10252.8, 2845.76 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="Arnold" type="Node2D" parent="."]
