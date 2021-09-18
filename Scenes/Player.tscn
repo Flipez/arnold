@@ -65,10 +65,10 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=14]
-radius = 5.01989
+radius = 5.80787
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 5.84637, 7.92886 )
+extents = Vector2( 9.43851, 3.61722 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "players",

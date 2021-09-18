@@ -10,8 +10,7 @@ var CRATE_SPEED = 5
 func _ready():
   crateTimer.start()
   Score.connect("new_score", self, "new_score")
-  $Camera2D/AnimationPlayer.play("zoom_in")
-  $skin_picture2/AnimationPlayer.play("get_transparent")
+  $Camera2D/Camera_zoom_in.play("zoom_in")
   
 func _process(delta):
   if Input.is_action_pressed("ui_accept") && !player_2_joined:
@@ -84,3 +83,11 @@ func _on_BeerShaderTimer_timeout():
   $BeerShader.visible = false
   $BackgroundAudioPlayer.pitch_scale = 1
   $Player.MAX_SPEED = 80
+
+
+
+
+func _on_Camera_zoom_in_animation_finished(_anim_name):
+  print("animation finished")
+  $skincover/AnimationPlayer.play("get_transparent")
+  pass # Replace with function body.
