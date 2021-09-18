@@ -95,16 +95,16 @@ func out_of_play_area():
   return(position.y < 72 || position.y > 232 || position.x < 40 || position.x > 350)
 
 func _on_InteractionArea_area_entered(area):
-  if area.get_parent().is_in_group("players") && !area.get_parent().is_holding_crate:
+  if area.get_parent().is_in_group("players") && area.get_overlapping_areas().size() == 0:
     hold_by_player = true
     never_touched = false
     player = area.get_parent()
     $CratePickupPlayer.play()
 
-func _on_InteractionArea_area_exited(_area):
-  hold_by_player = false
-  $CrateDropPlayer.play()
-  pass
+func _on_InteractionArea_area_exited(area):
+  if area.get_parent().is_in_group("players"):
+    hold_by_player = false
+    $CrateDropPlayer.play()
 
 func destroy():
   print("destroyed")

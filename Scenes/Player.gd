@@ -45,10 +45,6 @@ func _physics_process(delta):
     else:
       interactionArea.disabled = true
   
-
-  
-  
-  
 func move_state(delta):
   # set the strength of rotation depending on the users input
   if is_player_2:
