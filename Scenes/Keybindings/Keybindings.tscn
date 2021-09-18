@@ -170,7 +170,7 @@ animations = [ {
 "frames": [ SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="AtlasTexture" id=33]
@@ -209,7 +209,7 @@ scale = Vector2( 0.0701696, 0.0701696 )
 texture = ExtResource( 3 )
 
 [node name="Player1" type="Node2D" parent="."]
-position = Vector2( 148.682, 160 )
+position = Vector2( 151.182, 176.25 )
 rotation = -0.523599
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player1"]
@@ -232,7 +232,7 @@ position = Vector2( 40, 0 )
 frames = SubResource( 17 )
 
 [node name="Player2" type="Node2D" parent="."]
-position = Vector2( 220, 160 )
+position = Vector2( 222.5, 176.25 )
 rotation = -0.523599
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player2"]
@@ -255,25 +255,76 @@ position = Vector2( 40, 0 )
 frames = SubResource( 32 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 152.387, 200.034 )
+position = Vector2( 213.387, 200.784 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 35 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 121.557
-margin_top = 192.137
-margin_right = 494.557
-margin_bottom = 225.137
-rect_scale = Vector2( 0.5, 0.5 )
+[node name="Label2" type="Label" parent="."]
+margin_left = 110.409
+margin_top = 223.17
+margin_right = 440.409
+margin_bottom = 292.17
+rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Use      ingame to let Player 2 join."
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Press        to start the game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="Label2"]
+position = Vector2( 87.0721, 17.0151 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 32 )
+frame = 1
+playing = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 196.0
+margin_top = 195.5
+margin_right = 436.0
+margin_bottom = 264.5
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Use      ingame to join."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player 2" type="Label" parent="."]
+margin_left = 216.25
+margin_top = 128.25
+margin_right = 305.25
+margin_bottom = 161.25
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Player 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player 1" type="Label" parent="."]
+margin_left = 139.25
+margin_top = 127.25
+margin_right = 223.25
+margin_bottom = 160.25
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Player 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
-one_shot = true
-autostart = true
+wait_time = 8.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
