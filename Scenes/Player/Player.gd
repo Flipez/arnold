@@ -84,10 +84,16 @@ func invisible():
   $Sprite.hide()
   
 func set_animation():
-  if is_holding_crate:
-    $AnimatedSprite.play("holding")
+  if is_player_2:
+    if is_holding_crate:
+      $AnimatedSprite.play("holding_b")
+    else:
+      $AnimatedSprite.play("default_b")
   else:
-    $AnimatedSprite.play("default")
+    if is_holding_crate:
+      $AnimatedSprite.play("holding_a")
+    else:
+      $AnimatedSprite.play("default_a")
 
 func _on_InteractionTimer_timeout():
   state = MOVE

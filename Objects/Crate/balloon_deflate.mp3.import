@@ -11,5 +11,5 @@ dest_files=[ "res://.import/balloon_deflate.mp3-86dd38b4fb40600e2aa09466f75f76f7
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

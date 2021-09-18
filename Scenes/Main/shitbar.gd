@@ -8,11 +8,11 @@ func crate_destroyed():
   $BarIncreasePlayer.play()
   $Progress.value += 1
   
-  if $Progress.value >= $Progress.max_value:
+  if $Progress.value >= $Progress.max_value and name == "Shitbar" \
+  or $Progress.value <= 0 and name != "Shitbar":
     match name:
       "Shitbar":
         Score.toilet = true
-    
     get_tree().change_scene("res://Scenes/Lost/Lost.tscn")
   
   
