@@ -10,7 +10,7 @@ var CRATE_SPEED = 5
 func _ready():
   crateTimer.start()
   var _return = Score.connect("new_score", self, "new_score")
-  $Camera2D/Camera_zoom_in.play("zoom_in")
+  $Camera2D/Camera_zoom_in.play("zoom_in_to_game")
   
 func _process(_delta):
   if Input.is_action_pressed("ui_accept") && !player_2_joined:
@@ -97,6 +97,8 @@ func _on_BeerShaderTimer_timeout():
     if player_2_joined:
       $Players/Player2.MAX_SPEED = 80
 
-func _on_Camera_zoom_in_animation_finished(_anim_name):
-  print("animation finished")
-  $skincover/AnimationPlayer.play("get_transparent")
+func _on_Camera_zoom_in_animation_finished(anim_name):
+  if anim_name == "zoom_in_to_game":
+    $skincover/AnimationPlayer.play("get_transparent")
+  else:
+    var _return = get_tree().change_scene("res://Scenes/Lost/Lost.tscn")
