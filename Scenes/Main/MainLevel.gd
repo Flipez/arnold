@@ -26,18 +26,19 @@ func _on_CrateSpawnerTimer_timeout():
   crate.SPEED = CRATE_SPEED
   $Crates.add_child(crate)
   crate.connect("destroyed", shitBar, "crate_destroyed")
-  if crate.type_string == "air":
-    crate.connect("collected", $Lungbar, "crate_collected")
-  if crate.type_string == "chocolate":
-    crate.connect("collected", $Heartbar, "crate_collected")
-  if crate.type_string == "banana":
-    crate.connect("collected", $Musclebar, "crate_collected")
-  if crate.type_string == "coffee":
-    crate.connect("collected", $Brainbar, "crate_collected")
-    crate.connect("collected", self, "coffee_collected")
-  if crate.type_string == "beer":
-    crate.connect("collected", $Brainbar, "crate_collected")
-    crate.connect("collected", self, "beer_collected")
+  match crate.type_string:
+    "air":
+      crate.connect("collected", $Lungbar, "crate_collected")
+    "chocolate":
+      crate.connect("collected", $Heartbar, "crate_collected")
+    "banana":
+      crate.connect("collected", $Musclebar, "crate_collected")
+    "coffee":
+      crate.connect("collected", $Brainbar, "crate_collected")
+      crate.connect("collected", self, "coffee_collected")
+    "beer":
+      crate.connect("collected", $Brainbar, "crate_collected")
+      crate.connect("collected", self, "beer_collected")
   
 func set_speed_scale(scale):
   $Belt.set_speed(scale)
@@ -55,13 +56,16 @@ func set_speed_scale(scale):
 func new_score(score):
   set_speed_scale(1 + score / 10)
   
+func pitch_sound_to(pitch_scale):
+  $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", $BackgroundAudioPlayer.pitch_scale, pitch_scale, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+  $BackgroundAudioPlayer/Tween.start()
+  
 func coffee_collected():
   $CoffeeShaderTimer.start()
   $CoffeeShader.visible = true
   $BeerShader.visible = false
   
-  $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", $BackgroundAudioPlayer.pitch_scale, 1.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-  $BackgroundAudioPlayer/Tween.start()
+  pitch_sound_to(1.5)
   $Players/Player.MAX_SPEED = 160
   if player_2_joined:
     $Players/Player2.MAX_SPEED = 160
@@ -72,8 +76,7 @@ func beer_collected():
   $CoffeeShader.visible = false
   $BeerShader.visible = true
   
-  $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", $BackgroundAudioPlayer.pitch_scale, 0.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-  $BackgroundAudioPlayer/Tween.start()
+  pitch_sound_to(0.5)
   $Players/Player.MAX_SPEED = 20
   if player_2_joined:
     $Players/Player2.MAX_SPEED = 20
@@ -81,7 +84,7 @@ func beer_collected():
 func _on_CoffeeShaderTimer_timeout():
   $CoffeeShader.visible = false
   if $BackgroundAudioPlayer.pitch_scale == 1.5:
-    $BackgroundAudioPlayer.pitch_scale = 1
+    pitch_sound_to(1)
     $Players/Player.MAX_SPEED = 80
     if player_2_joined:
       $Players/Player2.MAX_SPEED = 80
@@ -89,7 +92,7 @@ func _on_CoffeeShaderTimer_timeout():
 func _on_BeerShaderTimer_timeout():
   $BeerShader.visible = false
   if $BackgroundAudioPlayer.pitch_scale == 0.5:
-    $BackgroundAudioPlayer.pitch_scale = 1
+    pitch_sound_to(1)
     $Players/Player.MAX_SPEED = 80
     if player_2_joined:
       $Players/Player2.MAX_SPEED = 80
@@ -97,4 +100,3 @@ func _on_BeerShaderTimer_timeout():
 func _on_Camera_zoom_in_animation_finished(_anim_name):
   print("animation finished")
   $skincover/AnimationPlayer.play("get_transparent")
-  pass # Replace with function body.

@@ -8,6 +8,14 @@ export var never_touched = true
 signal destroyed
 signal collected
 
+var collect_streams = [
+  preload("res://Objects/Crate/balloon_deflate.mp3"),
+  preload("res://Objects/Crate/banana_tear.mp3"),
+  preload("res://Objects/Crate/chocolate_nom.mp3"),
+  preload("res://Objects/Crate/coffee_sip.mp3"),
+  preload("res://Objects/Crate/beer_open.mp3")
+ ]
+
 enum types {
   AIR,
   BANANA,
@@ -114,37 +122,11 @@ func destroy():
 func collect():
   $InteractionArea/CollisionShape2D.disabled = true
   visible = false
-  if type_id == types.BEER:
-    $CollectBeerPlayer.play()
-  elif type_id == types.COFFEE:
-    $CollectCoffeePlayer.play()
-  elif type_id == types.AIR:
-    $CollectBalloonPlayer.play() 
-  elif type_id == types.BANANA:
-    $CollectBananaPlayer.play()
-  elif type_id == types.CHOCOLATE:
-    $CollectChocolatePlayer.play()
-  else:
-    $CollectAudioPlayer.play()
+  $CollectAudioPlayer.stream = collect_streams[type_id]
+  $CollectAudioPlayer.play()
 
 func _on_CollectAudioPlayer_finished():
   print("collected")
   emit_signal("collected")
   Score.increase(5)
   queue_free()
-
-
-func _on_CollectBeerPlayer_finished():
-  _on_CollectAudioPlayer_finished()
-
-func _on_CollectCoffeePlayer_finished():
-  _on_CollectAudioPlayer_finished()
-
-func _on_CollectBalloonPlayer_finished():
-  _on_CollectAudioPlayer_finished()
-
-func _on_AudioStreamPlayer_finished():
-  _on_CollectAudioPlayer_finished()
-
-func _on_CollectChocolatePlayer_finished():
-  _on_CollectAudioPlayer_finished()

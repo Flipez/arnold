@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://Scenes/Main/Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Scenes/Main/Sprites/bubblecorner_1.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Main/Sprites/bubblecorner_2.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Main/shitbar.gd" type="Script" id=14]
-[ext_resource path="res://Objects/Crate/destroy.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Objects/Crate/Crate.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/textures/blood.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/Main/Sprites/bubbles.png" type="Texture" id=18]
@@ -903,14 +902,13 @@ texture = ExtResource( 32 )
 position = Vector2( -11132.4, 5214.6 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 7 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="sportsteam" type="AnimatedSprite" parent="Background"]
 position = Vector2( 10252.8, 2845.76 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1140,9 +1138,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BarIncreasePlayer" type="AudioStreamPlayer" parent="Lungbar"]
-stream = ExtResource( 15 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lungbar"]
 position = Vector2( 29.0328, 46.052 )
 frames = SubResource( 40 )
@@ -1171,12 +1166,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BarIncreasePlayer" type="AudioStreamPlayer" parent="Heartbar"]
-stream = ExtResource( 15 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Heartbar"]
 position = Vector2( 18.6877, 74.751 )
 frames = SubResource( 43 )
+frame = 1
 playing = true
 
 [node name="Musclebar" type="Control" parent="."]
@@ -1202,13 +1195,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BarIncreasePlayer" type="AudioStreamPlayer" parent="Musclebar"]
-stream = ExtResource( 15 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Musclebar"]
 position = Vector2( 42.3181, 53.0599 )
 frames = SubResource( 46 )
-frame = 1
 playing = true
 
 [node name="Brainbar" type="Control" parent="."]
@@ -1234,12 +1223,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BarIncreasePlayer" type="AudioStreamPlayer" parent="Brainbar"]
-stream = ExtResource( 15 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Brainbar"]
 position = Vector2( 14.3495, 48.7216 )
 frames = SubResource( 49 )
+frame = 1
 playing = true
 
 [node name="Players" type="Node2D" parent="."]
@@ -1333,9 +1320,9 @@ autoplay = true
 [node name="Tween" type="Tween" parent="BackgroundAudioPlayer"]
 
 [connection signal="timeout" from="CrateSpawnerTimer" to="." method="_on_CrateSpawnerTimer_timeout"]
+[connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Heartbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Brainbar" method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="Camera2D/Camera_zoom_in" to="." method="_on_Camera_zoom_in_animation_finished"]
 [connection signal="timeout" from="BeerShaderTimer" to="." method="_on_BeerShaderTimer_timeout"]
