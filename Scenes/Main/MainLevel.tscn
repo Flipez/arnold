@@ -721,14 +721,30 @@ points = PoolVector2Array( 15.8718, 0.203979, 16, 15.9994, 8.02083, 16, 7.8339, 
 radius = 11.7704
 height = 0.0
 
-[sub_resource type="CircleShape2D" id=58]
+[sub_resource type="CircleShape2D" id=37]
 
-[sub_resource type="AtlasTexture" id=41]
+[sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=40]
+animations = [ {
+"frames": [ SubResource( 38 ), SubResource( 39 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 22 )
 region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=43]
@@ -736,15 +752,15 @@ animations = [ {
 "frames": [ SubResource( 41 ), SubResource( 42 ) ],
 "loop": true,
 "name": "default",
-"speed": 2.0
+"speed": 3.0
 } ]
 
 [sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 20 )
 region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=45]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 20 )
 region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=46]
@@ -755,45 +771,29 @@ animations = [ {
 "speed": 3.0
 } ]
 
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 0, 16, 16 )
+
 [sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 20 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=49]
-atlas = ExtResource( 20 )
+atlas = ExtResource( 24 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=50]
+[sub_resource type="SpriteFrames" id=49]
 animations = [ {
-"frames": [ SubResource( 48 ), SubResource( 49 ) ],
+"frames": [ SubResource( 47 ), SubResource( 48 ) ],
 "loop": true,
 "name": "default",
 "speed": 3.0
 } ]
 
-[sub_resource type="AtlasTexture" id=51]
-atlas = ExtResource( 24 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=52]
-atlas = ExtResource( 24 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=53]
-animations = [ {
-"frames": [ SubResource( 51 ), SubResource( 52 ) ],
-"loop": true,
-"name": "default",
-"speed": 3.0
-} ]
-
-[sub_resource type="ShaderMaterial" id=54]
+[sub_resource type="ShaderMaterial" id=50]
 shader = ExtResource( 38 )
 shader_param/seed = 81.0
 shader_param/power = 0.003
 shader_param/speed = 0.0
 
-[sub_resource type="ShaderMaterial" id=55]
+[sub_resource type="ShaderMaterial" id=51]
 shader = ExtResource( 37 )
 shader_param/shake_power = 0.0003
 shader_param/shake_rate = 0.2
@@ -801,7 +801,7 @@ shader_param/shake_speed = 5.0
 shader_param/shake_block_size = 30.5
 shader_param/shake_color_rate = 0.01
 
-[sub_resource type="Animation" id=56]
+[sub_resource type="Animation" id=52]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("skin_picture2:modulate")
@@ -828,7 +828,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=57]
+[sub_resource type="Animation" id=53]
 length = 3.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:zoom")
@@ -903,13 +903,14 @@ texture = ExtResource( 32 )
 position = Vector2( -11132.4, 5214.6 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 7 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="sportsteam" type="AnimatedSprite" parent="Background"]
 position = Vector2( 10252.8, 2845.76 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1098,7 +1099,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shitbar/TextureRect"]
 position = Vector2( 11.211, 10.4173 )
-shape = SubResource( 58 )
+shape = SubResource( 37 )
 
 [node name="Progress" type="TextureProgress" parent="Shitbar"]
 margin_left = 23.8978
@@ -1144,7 +1145,7 @@ stream = ExtResource( 15 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lungbar"]
 position = Vector2( 29.0328, 46.052 )
-frames = SubResource( 43 )
+frames = SubResource( 40 )
 playing = true
 
 [node name="Heartbar" type="Control" parent="."]
@@ -1175,7 +1176,7 @@ stream = ExtResource( 15 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Heartbar"]
 position = Vector2( 18.6877, 74.751 )
-frames = SubResource( 46 )
+frames = SubResource( 43 )
 playing = true
 
 [node name="Musclebar" type="Control" parent="."]
@@ -1206,7 +1207,7 @@ stream = ExtResource( 15 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Musclebar"]
 position = Vector2( 42.3181, 53.0599 )
-frames = SubResource( 50 )
+frames = SubResource( 46 )
 frame = 1
 playing = true
 
@@ -1238,11 +1239,13 @@ stream = ExtResource( 15 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Brainbar"]
 position = Vector2( 14.3495, 48.7216 )
-frames = SubResource( 53 )
+frames = SubResource( 49 )
 playing = true
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 216.018, 93.3213 )
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Player" parent="Players" instance=ExtResource( 2 )]
+position = Vector2( 200, 100 )
 
 [node name="ScoreLabel" type="Label" parent="."]
 margin_left = 8.0
@@ -1263,7 +1266,7 @@ autostart = true
 
 [node name="BeerShader" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 54 )
+material = SubResource( 50 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 328.0
@@ -1275,7 +1278,7 @@ __meta__ = {
 
 [node name="CoffeeShader" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 55 )
+material = SubResource( 51 )
 margin_left = -8.0
 margin_top = -8.0
 margin_right = 328.0
@@ -1297,7 +1300,7 @@ texture = ExtResource( 41 )
 texture = ExtResource( 28 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="skincover"]
-anims/get_transparent = SubResource( 56 )
+anims/get_transparent = SubResource( 52 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 160, 120 )
@@ -1312,7 +1315,7 @@ scale = Vector2( 37.4669, 41.158 )
 texture = ExtResource( 31 )
 
 [node name="Camera_zoom_in" type="AnimationPlayer" parent="Camera2D"]
-anims/zoom_in = SubResource( 57 )
+anims/zoom_in = SubResource( 53 )
 
 [node name="BeerShaderTimer" type="Timer" parent="."]
 wait_time = 8.0
@@ -1330,9 +1333,9 @@ autoplay = true
 [node name="Tween" type="Tween" parent="BackgroundAudioPlayer"]
 
 [connection signal="timeout" from="CrateSpawnerTimer" to="." method="_on_CrateSpawnerTimer_timeout"]
-[connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Heartbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Brainbar" method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="Camera2D/Camera_zoom_in" to="." method="_on_Camera_zoom_in_animation_finished"]
 [connection signal="timeout" from="BeerShaderTimer" to="." method="_on_BeerShaderTimer_timeout"]

@@ -254,15 +254,10 @@ frames = SubResource( 29 )
 position = Vector2( 40, 0 )
 frames = SubResource( 32 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 213.387, 200.784 )
-scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 35 )
-
 [node name="Label2" type="Label" parent="."]
-margin_left = 110.409
+margin_left = 119.414
 margin_top = 223.17
-margin_right = 440.409
+margin_right = 449.414
 margin_bottom = 292.17
 rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/font = ExtResource( 5 )
@@ -274,16 +269,17 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Label2"]
-position = Vector2( 87.0721, 17.0151 )
+position = Vector2( 68.5315, 13.4835 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 32 )
+frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="."]
-margin_left = 196.0
-margin_top = 195.5
-margin_right = 436.0
-margin_bottom = 264.5
+margin_left = 203.946
+margin_top = 197.354
+margin_right = 443.946
+margin_bottom = 266.354
 rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -292,6 +288,11 @@ text = "Use      ingame to join."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Label"]
+position = Vector2( 45.5963, 13.1989 )
+scale = Vector2( 1.66667, 1.66667 )
+frames = SubResource( 35 )
 
 [node name="Player 2" type="Label" parent="."]
 margin_left = 216.25

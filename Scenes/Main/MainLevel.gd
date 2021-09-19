@@ -18,7 +18,7 @@ func _process(delta):
     var player2 = preload("res://Scenes/Player/Player.tscn").instance()
     player2.set_name("Player2")
     player2.set_position(Vector2(200, 100))
-    add_child(player2)
+    $Players.add_child(player2)
 
 
 func _on_CrateSpawnerTimer_timeout():
@@ -62,7 +62,9 @@ func coffee_collected():
   
   $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", $BackgroundAudioPlayer.pitch_scale, 1.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
   $BackgroundAudioPlayer/Tween.start()
-  $Player.MAX_SPEED = 160
+  $Players/Player.MAX_SPEED = 160
+  if player_2_joined:
+    $Players/Player2.MAX_SPEED = 160
 
   
 func beer_collected():
@@ -72,19 +74,25 @@ func beer_collected():
   
   $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", $BackgroundAudioPlayer.pitch_scale, 0.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
   $BackgroundAudioPlayer/Tween.start()
-  $Player.MAX_SPEED = 20
+  $Players/Player.MAX_SPEED = 20
+  if player_2_joined:
+    $Players/Player2.MAX_SPEED = 20
 
 func _on_CoffeeShaderTimer_timeout():
   $CoffeeShader.visible = false
   if $BackgroundAudioPlayer.pitch_scale == 1.5:
     $BackgroundAudioPlayer.pitch_scale = 1
-    $Player.MAX_SPEED = 80
+    $Players/Player.MAX_SPEED = 80
+    if player_2_joined:
+      $Players/Player2.MAX_SPEED = 80
 
 func _on_BeerShaderTimer_timeout():
   $BeerShader.visible = false
   if $BackgroundAudioPlayer.pitch_scale == 0.5:
     $BackgroundAudioPlayer.pitch_scale = 1
-    $Player.MAX_SPEED = 80
+    $Players/Player.MAX_SPEED = 80
+    if player_2_joined:
+      $Players/Player2.MAX_SPEED = 80
 
 func _on_Camera_zoom_in_animation_finished(_anim_name):
   print("animation finished")
