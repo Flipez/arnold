@@ -1121,14 +1121,13 @@ texture = ExtResource( 31 )
 position = Vector2( -12000, 6800 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="sportsteam" type="AnimatedSprite" parent="Background"]
 position = Vector2( 11111, 5600 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1260,6 +1259,7 @@ shape = SubResource( 36 )
 
 [node name="Area_heart" type="Area2D" parent="Tubes" groups=[
 "chocolate",
+"pizza",
 ]]
 collision_layer = 0
 collision_mask = 64
@@ -1282,6 +1282,8 @@ shape = SubResource( 36 )
 
 [node name="Area_muscle" type="Area2D" parent="Tubes" groups=[
 "banana",
+"chicken",
+"egg",
 ]]
 position = Vector2( 16.2709, 95.6409 )
 collision_layer = 0
@@ -1325,7 +1327,6 @@ margin_top = 4.34
 margin_right = 119.898
 margin_bottom = 20.34
 max_value = 10.0
-value = 9.0
 texture_under = ExtResource( 44 )
 texture_progress = ExtResource( 43 )
 __meta__ = {
@@ -1390,6 +1391,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Heartbar"]
 position = Vector2( 18.6877, 74.751 )
 frames = SubResource( 47 )
+frame = 1
 playing = true
 
 [node name="Musclebar" type="Control" parent="."]
@@ -1447,6 +1449,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Brainbar"]
 position = Vector2( 14.3495, 48.7216 )
 frames = SubResource( 53 )
+frame = 1
 playing = true
 
 [node name="Players" type="Node2D" parent="."]
@@ -1546,10 +1549,10 @@ one_shot = true
 [connection signal="bar_full" from="Heartbar" to="Camera2D" method="_on_Heartbar_bar_full"]
 [connection signal="bar_full" from="Musclebar" to="Camera2D" method="_on_Musclebar_bar_full"]
 [connection signal="bar_full" from="Brainbar" to="Camera2D" method="_on_Brainbar_bar_full"]
-[connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Brainbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Heartbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer" to="Brainbar" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="Camera2D/Camera_zoom_in" to="." method="_on_Camera_zoom_in_animation_finished"]
 [connection signal="timeout" from="BeerShaderTimer" to="." method="_on_BeerShaderTimer_timeout"]
 [connection signal="timeout" from="CoffeeShaderTimer" to="." method="_on_CoffeeShaderTimer_timeout"]

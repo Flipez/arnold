@@ -21,9 +21,9 @@ func _process(_delta):
     match $Players/Player.crate.type_string:
       "air":
         $Lungbar/AnimatedSprite.play("active")
-      "chocolate":
+      "chocolate", "pizza":
         $Heartbar/AnimatedSprite.play("active")
-      "banana":
+      "banana", "chicken", "egg":
         $Musclebar/AnimatedSprite.play("active")
       "coffee", "beer":
         $Brainbar/AnimatedSprite.play("active")
@@ -41,9 +41,9 @@ func _on_CrateSpawnerTimer_timeout():
   match crate.type_string:
     "air":
       crate.connect("collected", $Lungbar, "crate_collected")
-    "chocolate":
+    "chocolate", "pizza":
       crate.connect("collected", $Heartbar, "crate_collected")
-    "banana":
+    "banana", "egg", "chicken":
       crate.connect("collected", $Musclebar, "crate_collected")
     "coffee":
       crate.connect("collected", $Brainbar, "crate_collected")

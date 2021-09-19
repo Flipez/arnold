@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/egg.mp3-4bd962b31a5746bea4d714148cff0ec2.mp3str"
+
+[deps]
+
+source_file="res://Objects/Crate/egg.mp3"
+dest_files=[ "res://.import/egg.mp3-4bd962b31a5746bea4d714148cff0ec2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
