@@ -8,6 +8,7 @@ var velocity = Vector2.ZERO
 var input_vector = Vector2.ZERO
 var is_holding_crate = false
 var is_player_2 = false
+var crate = null
 
 onready var interactionArea = $InteractionArea/InteractionShape
 onready var playerSprite = $AnimatedSprite
@@ -52,10 +53,12 @@ func set_animation():
     else:
       playerSprite.play("default_a")
 
-func _on_interactionArea_area_entered(_area):
+func _on_interactionArea_area_entered(area):
   is_holding_crate = true
+  crate = area.get_parent()
   set_animation()
 
 func _on_InteractionArea_area_exited(_area):
   is_holding_crate = false
+  crate = null
   set_animation()

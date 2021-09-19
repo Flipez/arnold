@@ -8,6 +8,7 @@ var player_2_joined = false
 var CRATE_SPEED = 5
 
 func _ready():
+  $skincover.visible = true
   crateTimer.start()
   var _return = Score.connect("new_score", self, "new_score")
   $Camera2D/Camera_zoom_in.play("zoom_in_to_game")
@@ -15,6 +16,22 @@ func _ready():
 func _process(_delta):
   if Input.is_action_pressed("ui_accept") && !player_2_joined:
     spawn_player_2()
+    
+  if $Players/Player.is_holding_crate:
+    match $Players/Player.crate.type_string:
+      "air":
+        $Lungbar/AnimatedSprite.play("active")
+      "chocolate":
+        $Heartbar/AnimatedSprite.play("active")
+      "banana":
+        $Musclebar/AnimatedSprite.play("active")
+      "coffee", "beer":
+        $Brainbar/AnimatedSprite.play("active")
+  else:
+    $Lungbar/AnimatedSprite.play("default")
+    $Heartbar/AnimatedSprite.play("default")
+    $Musclebar/AnimatedSprite.play("default")
+    $Brainbar/AnimatedSprite.play("default")
 
 func _on_CrateSpawnerTimer_timeout():
   var crate = crate_preload.instance()
@@ -81,7 +98,7 @@ func spawn_player_2():
 
 func _on_CoffeeShaderTimer_timeout():
   $CoffeeShader.visible = false
-  if $BackgroundAudioPlayer.pitch_scale == 1.5:
+  if Sound.player.pitch_scale == 1.5:
     Sound.pitch_sound_to(1)
     $Players/Player.MAX_SPEED = 80
     if player_2_joined:
@@ -89,7 +106,7 @@ func _on_CoffeeShaderTimer_timeout():
 
 func _on_BeerShaderTimer_timeout():
   $BeerShader.visible = false
-  if $BackgroundAudioPlayer.pitch_scale == 0.5:
+  if Sound.player.pitch_scale == 0.5:
     Sound.pitch_sound_to(1)
     $Players/Player.MAX_SPEED = 80
     if player_2_joined:
