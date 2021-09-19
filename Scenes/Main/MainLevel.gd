@@ -9,10 +9,10 @@ var CRATE_SPEED = 5
 
 func _ready():
   crateTimer.start()
-  Score.connect("new_score", self, "new_score")
+  var _return = Score.connect("new_score", self, "new_score")
   $Camera2D/Camera_zoom_in.play("zoom_in")
   
-func _process(delta):
+func _process(_delta):
   if Input.is_action_pressed("ui_accept") && !player_2_joined:
     spawn_player_2()
 

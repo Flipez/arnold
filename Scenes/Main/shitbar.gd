@@ -13,11 +13,10 @@ func crate_destroyed():
     match name:
       "Shitbar":
         Score.toilet = true
-    get_tree().change_scene("res://Scenes/Lost/Lost.tscn")
+    var _return = get_tree().change_scene("res://Scenes/Lost/Lost.tscn")
   
   
 func crate_collected():
-  #$BarIncreasePlayer.play()
   $Progress.value += 5
 
 func _on_Timer_timeout():

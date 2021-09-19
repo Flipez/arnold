@@ -70,7 +70,7 @@ func _process(delta):
     destroy()
   
   if never_touched == false:
-    move_and_slide(Vector2.ZERO)
+    var _return = move_and_slide(Vector2.ZERO)
 
 
 func move_on_belt(delta):
