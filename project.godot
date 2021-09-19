@@ -10,13 +10,15 @@ config_version=4
 
 [application]
 
-config/name="InsideTheMachine"
+config/name="Arnold"
+config/description="Help Arnold get his gains"
 run/main_scene="res://Scenes/Intro/Intro.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Score="*res://Scenes/Main/Score.gd"
+Sound="*res://Scenes/Sound/Sound.tscn"
 
 [display]
 

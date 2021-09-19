@@ -51,16 +51,14 @@ func set_speed_scale(scale):
 func new_score(score):
   set_speed_scale(1 + score / 10)
   
-func pitch_sound_to(pitch_scale):
-  $BackgroundAudioPlayer/Tween.interpolate_property($BackgroundAudioPlayer, "pitch_scale", $BackgroundAudioPlayer.pitch_scale, pitch_scale, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-  $BackgroundAudioPlayer/Tween.start()
+
   
 func coffee_collected():
   $CoffeeShaderTimer.start()
   $CoffeeShader.visible = true
   $BeerShader.visible = false
   
-  pitch_sound_to(1.5)
+  Sound.pitch_sound_to(1.5)
   $Players/Player.MAX_SPEED = 160
   if player_2_joined:
     $Players/Player2.MAX_SPEED = 160
@@ -70,7 +68,7 @@ func beer_collected():
   $CoffeeShader.visible = false
   $BeerShader.visible = true
   
-  pitch_sound_to(0.5)
+  Sound.pitch_sound_to(0.5)
   $Players/Player.MAX_SPEED = 20
   if player_2_joined:
     $Players/Player2.MAX_SPEED = 20
@@ -84,7 +82,7 @@ func spawn_player_2():
 func _on_CoffeeShaderTimer_timeout():
   $CoffeeShader.visible = false
   if $BackgroundAudioPlayer.pitch_scale == 1.5:
-    pitch_sound_to(1)
+    Sound.pitch_sound_to(1)
     $Players/Player.MAX_SPEED = 80
     if player_2_joined:
       $Players/Player2.MAX_SPEED = 80
@@ -92,7 +90,7 @@ func _on_CoffeeShaderTimer_timeout():
 func _on_BeerShaderTimer_timeout():
   $BeerShader.visible = false
   if $BackgroundAudioPlayer.pitch_scale == 0.5:
-    pitch_sound_to(1)
+    Sound.pitch_sound_to(1)
     $Players/Player.MAX_SPEED = 80
     if player_2_joined:
       $Players/Player2.MAX_SPEED = 80

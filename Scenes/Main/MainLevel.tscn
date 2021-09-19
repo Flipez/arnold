@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://Scenes/Main/Sprites/bg.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -38,7 +38,6 @@
 [ext_resource path="res://Scenes/Lost/Sprites/silhouette_2.png" type="Texture" id=36]
 [ext_resource path="res://Shader/Coffee.gdshader" type="Shader" id=37]
 [ext_resource path="res://Shader/Beer.gdshader" type="Shader" id=38]
-[ext_resource path="res://Scenes/Main/background.mp3" type="AudioStream" id=39]
 [ext_resource path="res://Objects/Crate/fart.mp3" type="AudioStream" id=40]
 [ext_resource path="res://Objects/textures/skin.jpg" type="Texture" id=41]
 [ext_resource path="res://Scenes/Main/Camera2D.gd" type="Script" id=42]
@@ -828,7 +827,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=54]
+[sub_resource type="Animation" id=53]
 resource_name = "zoom_in_to_brain"
 length = 4.0
 tracks/0/type = "value"
@@ -856,8 +855,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 85.381, -74.2698 ) ]
 }
 
-[sub_resource type="Animation" id=53]
-resource_name = "zoom_in_to_game"
+[sub_resource type="Animation" id=54]
 length = 3.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:zoom")
@@ -896,7 +894,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=56]
+[sub_resource type="Animation" id=55]
 resource_name = "zoom_in_to_heart"
 length = 4.0
 tracks/0/type = "value"
@@ -924,8 +922,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 127.575, -20.2451 ) ]
 }
 
-[sub_resource type="Animation" id=55]
-resource_name = "zoom_in_to_lung"
+[sub_resource type="Animation" id=56]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:zoom")
@@ -1044,6 +1041,7 @@ texture = ExtResource( 31 )
 position = Vector2( -12000, 6800 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 7 )
+frame = 3
 playing = true
 
 [node name="sportsteam" type="AnimatedSprite" parent="Background"]
@@ -1246,7 +1244,6 @@ margin_top = 4.34
 margin_right = 119.898
 margin_bottom = 20.34
 max_value = 10.0
-value = 9.0
 texture_under = ExtResource( 44 )
 texture_progress = ExtResource( 43 )
 __meta__ = {
@@ -1283,6 +1280,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lungbar"]
 position = Vector2( 29.0328, 46.052 )
 frames = SubResource( 40 )
+frame = 1
 playing = true
 
 [node name="Heartbar" type="Control" parent="."]
@@ -1311,7 +1309,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Heartbar"]
 position = Vector2( 18.6877, 74.751 )
 frames = SubResource( 43 )
-frame = 1
 playing = true
 
 [node name="Musclebar" type="Control" parent="."]
@@ -1340,6 +1337,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Musclebar"]
 position = Vector2( 42.3181, 53.0599 )
 frames = SubResource( 46 )
+frame = 1
 playing = true
 
 [node name="Brainbar" type="Control" parent="."]
@@ -1368,7 +1366,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Brainbar"]
 position = Vector2( 14.3495, 48.7216 )
 frames = SubResource( 49 )
-frame = 1
 playing = true
 
 [node name="Players" type="Node2D" parent="."]
@@ -1418,16 +1415,13 @@ __meta__ = {
 }
 
 [node name="skincover" type="Node2D" parent="."]
-visible = false
 position = Vector2( 151.279, 120.923 )
 scale = Vector2( 0.362884, 0.283612 )
 
 [node name="skin_picture2" type="Sprite" parent="skincover"]
-modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 41 )
 
 [node name="skin_bw" type="Sprite" parent="skincover"]
-modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 28 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="skincover"]
@@ -1449,10 +1443,10 @@ scale = Vector2( 37.4669, 41.158 )
 texture = ExtResource( 31 )
 
 [node name="Camera_zoom_in" type="AnimationPlayer" parent="Camera2D"]
-anims/zoom_in_to_brain = SubResource( 54 )
-anims/zoom_in_to_game = SubResource( 53 )
-anims/zoom_in_to_heart = SubResource( 56 )
-anims/zoom_in_to_lung = SubResource( 55 )
+anims/zoom_in_to_brain = SubResource( 53 )
+anims/zoom_in_to_game = SubResource( 54 )
+anims/zoom_in_to_heart = SubResource( 55 )
+anims/zoom_in_to_lung = SubResource( 56 )
 anims/zoom_in_to_muscle = SubResource( 57 )
 anims/zoom_in_to_toilet = SubResource( 58 )
 
@@ -1464,23 +1458,16 @@ one_shot = true
 wait_time = 8.0
 one_shot = true
 
-[node name="BackgroundAudioPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 39 )
-volume_db = -8.078
-autoplay = true
-
-[node name="Tween" type="Tween" parent="BackgroundAudioPlayer"]
-
 [connection signal="timeout" from="CrateSpawnerTimer" to="." method="_on_CrateSpawnerTimer_timeout"]
 [connection signal="bar_full" from="Shitbar" to="Camera2D" method="_on_Shitbar_bar_full"]
 [connection signal="bar_full" from="Lungbar" to="Camera2D" method="_on_Lungbar_bar_full"]
 [connection signal="bar_full" from="Heartbar" to="Camera2D" method="_on_Heartbar_bar_full"]
 [connection signal="bar_full" from="Musclebar" to="Camera2D" method="_on_Musclebar_bar_full"]
 [connection signal="bar_full" from="Brainbar" to="Camera2D" method="_on_Brainbar_bar_full"]
+[connection signal="timeout" from="Timer" to="Heartbar" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Brainbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer" to="Heartbar" method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="Camera2D/Camera_zoom_in" to="." method="_on_Camera_zoom_in_animation_finished"]
 [connection signal="timeout" from="BeerShaderTimer" to="." method="_on_BeerShaderTimer_timeout"]
 [connection signal="timeout" from="CoffeeShaderTimer" to="." method="_on_CoffeeShaderTimer_timeout"]
