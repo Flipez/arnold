@@ -30,41 +30,41 @@ colors = PoolColorArray( 0, 0, 0, 1, 0.680556, 0.680556, 0.680556, 1, 1, 1, 1, 1
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 947, 806 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 947, 806 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 1.2
 } ]
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 2153, 1920 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 2153, 1920 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 2153, 1920 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 2153, 1920 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 3.0
@@ -107,14 +107,13 @@ texture = ExtResource( 17 )
 [node name="sportsteam" type="AnimatedSprite" parent="Background"]
 position = Vector2( 11111, 5600 )
 scale = Vector2( 12.5325, 12.2181 )
-frames = SubResource( 10 )
-frame = 1
+frames = SubResource( 5 )
 playing = true
 
 [node name="kettlebell" type="AnimatedSprite" parent="Background"]
 position = Vector2( -12000, 6800 )
 scale = Vector2( 6.67318, 6.50298 )
-frames = SubResource( 7 )
+frames = SubResource( 10 )
 frame = 1
 playing = true
 
@@ -132,7 +131,7 @@ current = true
 zoom = Vector2( 100, 100 )
 
 [node name="hip" type="Sprite" parent="Arnold"]
-position = Vector2( -57.0196, 792.001 )
+position = Vector2( -57.0195, 0 )
 scale = Vector2( 40, 40 )
 texture = ExtResource( 13 )
 __meta__ = {
@@ -140,8 +139,7 @@ __meta__ = {
 }
 
 [node name="leg_right" type="Sprite" parent="Arnold/hip"]
-position = Vector2( 29.5548, 38.8364 )
-scale = Vector2( 1, 1 )
+position = Vector2( 31.2518, 37.705 )
 texture = ExtResource( 4 )
 offset = Vector2( 12.8605, 107.095 )
 __meta__ = {
@@ -155,8 +153,7 @@ __meta__ = {
 }
 
 [node name="leg_left" type="Sprite" parent="Arnold/hip"]
-position = Vector2( -25.4406, 37.2346 )
-scale = Vector2( 1, 1 )
+position = Vector2( -26.2406, 36.4346 )
 texture = ExtResource( 7 )
 offset = Vector2( 1.56687, 98.7184 )
 __meta__ = {
@@ -235,3 +232,5 @@ texture = ExtResource( 16 )
 position = Vector2( 31516.8, 4104.31 )
 scale = Vector2( 18.3393, 15.3161 )
 texture = ExtResource( 20 )
+
+[connection signal="animation_finished" from="Arnold/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

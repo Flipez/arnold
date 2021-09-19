@@ -2,7 +2,7 @@
 
 [resource]
 resource_name = "Falling"
-length = 10.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("hip/head/arm_right/hand_right:rotation_degrees")
 tracks/0/interp = 1

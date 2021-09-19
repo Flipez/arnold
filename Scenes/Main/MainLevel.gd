@@ -12,6 +12,14 @@ func _ready():
   crateTimer.start()
   var _return = Score.connect("new_score", self, "new_score")
   $Camera2D/Camera_zoom_in.play("zoom_in_to_game")
+  Score.score = 0
+  $Shitbar/Progress.value = 0
+  $Lungbar/Progress.value = 80
+  $Heartbar/Progress.value = 65
+  $Brainbar/Progress.value = 65
+  $Musclebar/Progress.value = 65
+  set_speed_scale(1)
+  
   
 func _process(_delta):
   if Input.is_action_pressed("ui_accept") && !player_2_joined:

@@ -15,6 +15,12 @@ func _ready():
   $Label2.visible = false
   $Godot_logo.visible = false
   
+  
+func _process(_delta):
+  if Input.is_action_just_pressed("ui_select_2"):
+    Sound.pitch_sound_to(1)
+    var _return = get_tree().change_scene("res://Scenes/Main/MainLevel.tscn")
+  
 func start_dialogue():
   display = ""
   current_char = 0
