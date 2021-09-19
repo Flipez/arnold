@@ -9,44 +9,14 @@ var input_vector = Vector2.ZERO
 var is_holding_crate = false
 var is_player_2 = false
 
-enum {
-  MOVE,
-  DIALOG,
-  INTERACT
- }
-
-export var state = MOVE
-
 onready var interactionArea = $InteractionArea/InteractionShape
 onready var playerSprite = $AnimatedSprite
 
 func _ready():
-  if name == "Player2":
-    is_player_2 = true
+  set_animation()
+  set_position(Vector2(200, 100))
     
 func _physics_process(delta):
-  set_animation()
-  match state:
-    MOVE:
-      move_state(delta)
-    INTERACT:
-      interact_state()
-    DIALOG:
-      dialog_state()
-      
-  if is_player_2:
-    if Input.is_action_pressed("ui_select_2"):
-      interactionArea.disabled = false
-    else:
-      interactionArea.disabled = true
-  else:
-    if Input.is_action_pressed("ui_select"):
-      interactionArea.disabled = false
-    else:
-      interactionArea.disabled = true
-  
-func move_state(delta):
-  # set the strength of rotation depending on the users input
   if is_player_2:
     rotation_degrees += Input.get_action_strength("ui_right_2") * 3
     rotation_degrees -= Input.get_action_strength("ui_left_2") * 3
@@ -63,46 +33,29 @@ func move_state(delta):
   else:
     velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
-  move()
-  
-func move():
   velocity = move_and_slide(velocity)
-
-
-func interact_state():
-  velocity = Vector2.ZERO
-  interactionArea.disabled = false
-
-  
-func dialog_state():
-  velocity = Vector2.ZERO
-
-func disable_interaction():
-  interactionArea.disabled = true
-
-func invisible():
-  $Sprite.hide()
+      
+  if is_player_2:
+    interactionArea.disabled = !Input.is_action_pressed("ui_select_2")
+  else:
+    interactionArea.disabled = !Input.is_action_pressed("ui_select")
   
 func set_animation():
   if is_player_2:
     if is_holding_crate:
-      $AnimatedSprite.play("holding_b")
+      playerSprite.play("holding_b")
     else:
-      $AnimatedSprite.play("default_b")
+      playerSprite.play("default_b")
   else:
     if is_holding_crate:
-      $AnimatedSprite.play("holding_a")
+      playerSprite.play("holding_a")
     else:
-      $AnimatedSprite.play("default_a")
-
-func _on_InteractionTimer_timeout():
-  state = MOVE
-  interactionArea.disabled = true
+      playerSprite.play("default_a")
 
 func _on_interactionArea_area_entered(_area):
   is_holding_crate = true
-
+  set_animation()
 
 func _on_InteractionArea_area_exited(_area):
   is_holding_crate = false
-
+  set_animation()

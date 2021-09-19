@@ -14,12 +14,7 @@ func _ready():
   
 func _process(delta):
   if Input.is_action_pressed("ui_accept") && !player_2_joined:
-    player_2_joined = true
-    var player2 = preload("res://Scenes/Player/Player.tscn").instance()
-    player2.set_name("Player2")
-    player2.set_position(Vector2(200, 100))
-    $Players.add_child(player2)
-
+    spawn_player_2()
 
 func _on_CrateSpawnerTimer_timeout():
   var crate = crate_preload.instance()
@@ -70,7 +65,6 @@ func coffee_collected():
   if player_2_joined:
     $Players/Player2.MAX_SPEED = 160
 
-  
 func beer_collected():
   $BeerShaderTimer.start()
   $CoffeeShader.visible = false
@@ -80,6 +74,12 @@ func beer_collected():
   $Players/Player.MAX_SPEED = 20
   if player_2_joined:
     $Players/Player2.MAX_SPEED = 20
+
+func spawn_player_2():
+  player_2_joined = true
+  var player2 = preload("res://Scenes/Player/Player.tscn").instance()
+  player2.is_player_2 = true
+  $Players.add_child(player2)
 
 func _on_CoffeeShaderTimer_timeout():
   $CoffeeShader.visible = false
