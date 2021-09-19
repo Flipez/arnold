@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/Lost/Lost.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Lost/Sprites/Arnold-Schwarzenegger_arm_right.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Scenes/Lost/ToiletAnimation.tres" type="Animation" id=19]
 [ext_resource path="res://Scenes/Lost/Sprites/toilet_door.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/Lost/Sprites/toilet-modified.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/Lost/toilet.mp3" type="AudioStream" id=22]
 [ext_resource path="res://Scenes/Lost/Sprites/background_2.jpg" type="Texture" id=23]
 
 [sub_resource type="Gradient" id=1]
@@ -114,7 +115,7 @@ playing = true
 position = Vector2( -12000, 6800 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 10 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="toilet" type="Sprite" parent="Background"]
@@ -233,4 +234,8 @@ position = Vector2( 31516.8, 4104.31 )
 scale = Vector2( 18.3393, 15.3161 )
 texture = ExtResource( 20 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+
 [connection signal="animation_finished" from="Arnold/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

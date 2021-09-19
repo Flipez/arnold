@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/toilet.mp3-2f46ea66a26d28ed5af7ad7a09b80253.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Lost/toilet.mp3"
+dest_files=[ "res://.import/toilet.mp3-2f46ea66a26d28ed5af7ad7a09b80253.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -4,6 +4,7 @@ var crate_preload = preload("res://Objects/Crate/Crate.tscn")
 onready var crateTimer = $CrateSpawnerTimer
 onready var shitBar = $Shitbar
 var player_2_joined = false
+var game_over = false
 
 var CRATE_SPEED = 5
 
@@ -19,9 +20,13 @@ func _ready():
   $Brainbar/Progress.value = 65
   $Musclebar/Progress.value = 65
   set_speed_scale(1)
+  game_over = false
   
   
 func _process(_delta):
+  if game_over:
+    return
+
   if Input.is_action_pressed("ui_accept") && !player_2_joined:
     spawn_player_2()
     
@@ -129,3 +134,11 @@ func _on_Camera_zoom_in_animation_finished(anim_name):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
   $Camera2D/Camera_zoom_in.play("zoom_in_to_game")
+
+
+func _game_over():
+  game_over = false
+  set_speed_scale(0)
+  $Players/Player.MAX_SPEED = 0
+  if player_2_joined:
+    $Players/Player2.MAX_SPEED = 0
