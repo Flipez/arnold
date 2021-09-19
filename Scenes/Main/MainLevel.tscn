@@ -1041,7 +1041,7 @@ texture = ExtResource( 31 )
 position = Vector2( -12000, 6800 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 7 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="sportsteam" type="AnimatedSprite" parent="Background"]
@@ -1244,6 +1244,7 @@ margin_top = 4.34
 margin_right = 119.898
 margin_bottom = 20.34
 max_value = 10.0
+value = 9.0
 texture_under = ExtResource( 44 )
 texture_progress = ExtResource( 43 )
 __meta__ = {
@@ -1309,6 +1310,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Heartbar"]
 position = Vector2( 18.6877, 74.751 )
 frames = SubResource( 43 )
+frame = 1
 playing = true
 
 [node name="Musclebar" type="Control" parent="."]
@@ -1337,7 +1339,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Musclebar"]
 position = Vector2( 42.3181, 53.0599 )
 frames = SubResource( 46 )
-frame = 1
 playing = true
 
 [node name="Brainbar" type="Control" parent="."]
@@ -1366,6 +1367,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Brainbar"]
 position = Vector2( 14.3495, 48.7216 )
 frames = SubResource( 49 )
+frame = 1
 playing = true
 
 [node name="Players" type="Node2D" parent="."]
@@ -1464,10 +1466,10 @@ one_shot = true
 [connection signal="bar_full" from="Heartbar" to="Camera2D" method="_on_Heartbar_bar_full"]
 [connection signal="bar_full" from="Musclebar" to="Camera2D" method="_on_Musclebar_bar_full"]
 [connection signal="bar_full" from="Brainbar" to="Camera2D" method="_on_Brainbar_bar_full"]
-[connection signal="timeout" from="Timer" to="Heartbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Brainbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Heartbar" method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="Camera2D/Camera_zoom_in" to="." method="_on_Camera_zoom_in_animation_finished"]
 [connection signal="timeout" from="BeerShaderTimer" to="." method="_on_BeerShaderTimer_timeout"]
 [connection signal="timeout" from="CoffeeShaderTimer" to="." method="_on_CoffeeShaderTimer_timeout"]

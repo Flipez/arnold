@@ -11,6 +11,7 @@ func _process(_delta):
   or $Progress.value <= $Progress.min_value + 1 and name != "Shitbar":
     print("bar full/empty")
     emit_signal("bar_full")
+    Sound.pitch_sound_to(0.3)
     match name:
       "Shitbar":
         Score.toilet = true
