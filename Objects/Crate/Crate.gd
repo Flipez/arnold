@@ -13,7 +13,10 @@ var collect_streams = [
   preload("res://Objects/Crate/banana_tear.mp3"),
   preload("res://Objects/Crate/chocolate_nom.mp3"),
   preload("res://Objects/Crate/coffee_sip.mp3"),
-  preload("res://Objects/Crate/beer_open.mp3")
+  preload("res://Objects/Crate/beer_open.mp3"),
+  preload("res://Objects/Crate/egg.mp3"),
+  preload("res://Objects/Crate/chicken.mp3"),
+  preload("res://Objects/Crate/pizza.mp3")
  ]
 
 enum types {
@@ -21,7 +24,10 @@ enum types {
   BANANA,
   CHOCOLATE,
   COFFEE,
-  BEER
+  BEER,
+  EGG,
+  CHICKEN,
+  PIZZA
  }
 
 var rng = RandomNumberGenerator.new()
@@ -40,12 +46,21 @@ func _ready():
     0,1,2,3:
       type_id = types.AIR
       type_string = "air"
-    4,5,6:
+    4:
       type_id = types.BANANA
       type_string = "banana"
-    7,8:
+    5:
+      type_id = types.EGG
+      type_string = "egg"
+    6:
+      type_id = types.CHICKEN
+      type_string = "chicken"
+    7:
       type_id = types.CHOCOLATE
       type_string = "chocolate"
+    8:
+      type_id = types.PIZZA
+      type_string = "pizza"
     9:
       type_id = types.COFFEE
       type_string = "coffee"

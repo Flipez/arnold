@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pizza.mp3-f227a82b8726cf012c6a183af586a422.mp3str"
+
+[deps]
+
+source_file="res://Objects/Crate/pizza.mp3"
+dest_files=[ "res://.import/pizza.mp3-f227a82b8726cf012c6a183af586a422.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
