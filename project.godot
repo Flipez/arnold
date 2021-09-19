@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="InsideTheMachine"
-run/main_scene="res://Scenes/Keybindings/Keybindings.tscn"
+run/main_scene="res://Scenes/Intro/Intro.tscn"
 config/icon="res://icon.png"
 
 [autoload]
