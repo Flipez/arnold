@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/Main/Sprites/bubblecorner_1.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Main/Sprites/bubblecorner_2.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Main/shitbar.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Lost/Sprites/background_2.jpg" type="Texture" id=15]
 [ext_resource path="res://Objects/Crate/Crate.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/textures/blood.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/Main/Sprites/bubbles.png" type="Texture" id=18]
@@ -40,7 +41,6 @@
 [ext_resource path="res://Scenes/Main/background.mp3" type="AudioStream" id=39]
 [ext_resource path="res://Objects/Crate/fart.mp3" type="AudioStream" id=40]
 [ext_resource path="res://Objects/textures/skin.jpg" type="Texture" id=41]
-[ext_resource path="res://Scenes/Lost/Sprites/blur-gym-and-fitness.jpg" type="Texture" id=42]
 [ext_resource path="res://Scenes/Main/Sprites/bar_full.png" type="Texture" id=43]
 [ext_resource path="res://Scenes/Main/Sprites/bar_empty.png" type="Texture" id=44]
 [ext_resource path="res://Scenes/Main/Sprites/bar_small_empty2.png" type="Texture" id=45]
@@ -879,36 +879,37 @@ scale = Vector2( 38.4993, 61442.7 )
 texture = SubResource( 2 )
 
 [node name="background" type="Sprite" parent="Background"]
-position = Vector2( -947.745, 2474.91 )
-scale = Vector2( 6.39701, 6.96645 )
-texture = ExtResource( 42 )
+scale = Vector2( 10, 12 )
+texture = ExtResource( 15 )
+offset = Vector2( 300, 200 )
 
 [node name="weightlifter" type="Sprite" parent="Background"]
-position = Vector2( -3036.57, 2493.15 )
+position = Vector2( -4000, 5200 )
 scale = Vector2( 5.3108, 4.65644 )
 texture = ExtResource( 27 )
+
+[node name="barbell" type="Sprite" parent="Background"]
+position = Vector2( 7900, 12000 )
+scale = Vector2( 8.18071, 9.41737 )
+texture = ExtResource( 32 )
 
 [node name="Arnold" type="Sprite" parent="Background"]
 position = Vector2( 241.011, 2814.82 )
 scale = Vector2( 37.4669, 41.158 )
 texture = ExtResource( 31 )
 
-[node name="barbell" type="Sprite" parent="Background"]
-position = Vector2( 7872, 11834 )
-scale = Vector2( 8.18071, 9.41737 )
-texture = ExtResource( 32 )
-
 [node name="kettlebell" type="AnimatedSprite" parent="Background"]
-position = Vector2( -11132.4, 5214.6 )
+position = Vector2( -12000, 6800 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 7 )
 frame = 2
 playing = true
 
 [node name="sportsteam" type="AnimatedSprite" parent="Background"]
-position = Vector2( 10252.8, 2845.76 )
+position = Vector2( 11111, 5600 )
 scale = Vector2( 12.5325, 12.2181 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1141,6 +1142,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Lungbar"]
 position = Vector2( 29.0328, 46.052 )
 frames = SubResource( 40 )
+frame = 1
 playing = true
 
 [node name="Heartbar" type="Control" parent="."]
@@ -1320,9 +1322,9 @@ autoplay = true
 [node name="Tween" type="Tween" parent="BackgroundAudioPlayer"]
 
 [connection signal="timeout" from="CrateSpawnerTimer" to="." method="_on_CrateSpawnerTimer_timeout"]
-[connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Heartbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Musclebar" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Lungbar" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="Brainbar" method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="Camera2D/Camera_zoom_in" to="." method="_on_Camera_zoom_in_animation_finished"]
 [connection signal="timeout" from="BeerShaderTimer" to="." method="_on_BeerShaderTimer_timeout"]
