@@ -73,18 +73,18 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 4 )
-region = Rect2( 128, 96, 16, 16 )
+region = Rect2( 128, 128, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 4 )
-region = Rect2( 160, 96, 16, 16 )
+region = Rect2( 160, 128, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
 "frames": [ SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="AtlasTexture" id=16]
@@ -153,18 +153,18 @@ animations = [ {
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 4 )
-region = Rect2( 128, 128, 16, 16 )
+region = Rect2( 128, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 4 )
-region = Rect2( 160, 128, 16, 16 )
+region = Rect2( 160, 96, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=30]
 animations = [ {
 "frames": [ SubResource( 28 ), SubResource( 29 ) ],
 "loop": true,
 "name": "default",
-"speed": 3.0
+"speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=31]
@@ -221,7 +221,7 @@ position = Vector2( 16, 0 )
 frames = SubResource( 12 )
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Player1"]
-position = Vector2( -0.337, 20 )
+position = Vector2( 0, 20 )
 frames = SubResource( 15 )
 
 [node name="Label2" type="Label" parent="Player1"]
@@ -257,7 +257,7 @@ position = Vector2( 16, 0 )
 frames = SubResource( 27 )
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Player2"]
-position = Vector2( -0.301, 20 )
+position = Vector2( 0, 20 )
 frames = SubResource( 30 )
 
 [node name="Label2" type="Label" parent="."]
@@ -277,8 +277,7 @@ __meta__ = {
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Label2"]
 position = Vector2( 68.5315, 13.4835 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 30 )
-frame = 1
+frames = SubResource( 15 )
 playing = true
 
 [node name="Label" type="Label" parent="."]

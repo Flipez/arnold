@@ -1,11 +1,15 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Objects/Crate/crate.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Crate/Crate.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Crate/placedown.wav" type="AudioStream" id=3]
 [ext_resource path="res://Objects/Crate/pickup.wav" type="AudioStream" id=4]
 [ext_resource path="res://Scenes/Main/Sprites/FOOD.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Main/Sprites/balloon_yellow.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Main/Sprites/balloon_pink.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Main/Sprites/balloon.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Main/Sprites/balloon_blue.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Main/Sprites/balloon_green.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.86746, 4.89431 )
@@ -23,15 +27,15 @@ region = Rect2( 572, 260, 22, 26 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
-region = Rect2( 75, 156, 25, 26 )
+region = Rect2( 184, 364, 23, 26 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 5 )
-region = Rect2( 494, 575, 26, 23 )
+region = Rect2( 75, 156, 25, 26 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 5 )
-region = Rect2( 184, 364, 23, 26 )
+region = Rect2( 494, 575, 26, 23 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 8 )
@@ -57,7 +61,71 @@ region = Rect2( 182, 312, 26, 26 )
 atlas = ExtResource( 5 )
 region = Rect2( 48, 338, 24, 26 )
 
-[sub_resource type="SpriteFrames" id=14]
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 10 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 10 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 10 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 6 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 6 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 9 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 9 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 9 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=30]
 animations = [ {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
@@ -71,23 +139,23 @@ animations = [ {
 }, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "coffee",
+"name": "egg",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
-"name": "banana",
+"name": "coffee",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 7 ) ],
 "loop": true,
-"name": "egg",
+"name": "banana",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "air",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [ SubResource( 12 ) ],
 "loop": true,
@@ -98,6 +166,26 @@ animations = [ {
 "loop": true,
 "name": "pizza",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "air_green",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "air_yellow",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "air_pink",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "air_blue",
+"speed": 3.0
 } ]
 
 [node name="Crate" type="KinematicBody2D" groups=[
@@ -133,9 +221,9 @@ volume_db = -4.039
 visible = false
 position = Vector2( -1.13249e-06, 0.0525572 )
 scale = Vector2( 0.684664, 0.684664 )
-frames = SubResource( 14 )
-animation = "air"
-frame = 3
+frames = SubResource( 30 )
+animation = "air_yellow"
+frame = 1
 playing = true
 
 [node name="CollectAudioPlayer" type="AudioStreamPlayer" parent="."]

@@ -14,6 +14,7 @@ func _ready():
   var _return = Score.connect("new_score", self, "new_score")
   $AnimationPlayer.play("coming_in")
   Score.score = 0
+  Score.toilet = false
   $Shitbar/Progress.value = 0
   $Lungbar/Progress.value = 80
   $Heartbar/Progress.value = 65
@@ -31,15 +32,19 @@ func _process(_delta):
     spawn_player_2()
     
   if $Players/Player.is_holding_crate:
-    match $Players/Player.crate.type_string:
-      "air":
-        $Lungbar/AnimatedSprite.play("active")
-      "chocolate", "pizza":
-        $Heartbar/AnimatedSprite.play("active")
-      "banana", "chicken", "egg":
-        $Musclebar/AnimatedSprite.play("active")
-      "coffee", "beer":
-        $Brainbar/AnimatedSprite.play("active")
+    if $Players/Player.crate.is_in_group("collectables"):
+      match $Players/Player.crate.type_string: 
+        "air":
+          $Lungbar/AnimatedSprite.play("active")
+        "chocolate", "pizza":
+          $Heartbar/AnimatedSprite.play("active")
+        "banana", "chicken", "egg":
+          $Musclebar/AnimatedSprite.play("active")
+        "coffee", "beer":
+          $Brainbar/AnimatedSprite.play("active")
+        _:
+          print("unknown type ", $Players/Player.crate.type_string)
+          pass
   else:
     $Lungbar/AnimatedSprite.play("default")
     $Heartbar/AnimatedSprite.play("default")
@@ -107,6 +112,7 @@ func spawn_player_2():
   player_2_joined = true
   var player2 = preload("res://Scenes/Player/Player.tscn").instance()
   player2.is_player_2 = true
+  player2.name = "Player2"
   $Players.add_child(player2)
 
 func _on_CoffeeShaderTimer_timeout():

@@ -37,9 +37,9 @@ func _physics_process(delta):
   velocity = move_and_slide(velocity)
       
   if is_player_2:
-    interactionArea.disabled = !Input.is_action_pressed("ui_select_2")
-  else:
     interactionArea.disabled = !Input.is_action_pressed("ui_select")
+  else:
+    interactionArea.disabled = !Input.is_action_pressed("ui_select_2")
   
 func set_animation():
   if is_player_2:

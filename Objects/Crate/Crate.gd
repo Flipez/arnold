@@ -68,7 +68,23 @@ func _ready():
       type_id = types.BEER
       type_string = "beer"
   
-  $ContentAnimatedSprite.play(type_string)
+  if type_id == types.AIR:
+    rng.randomize()
+    random_number = rng.randi_range(0, 4)
+
+    match random_number:
+      0:
+        $ContentAnimatedSprite.play("air")
+      1:
+        $ContentAnimatedSprite.play("air_pink")
+      2:
+        $ContentAnimatedSprite.play("air_green")
+      3:
+        $ContentAnimatedSprite.play("air_yellow")
+      4:
+        $ContentAnimatedSprite.play("air_blue")
+  else:
+    $ContentAnimatedSprite.play(type_string)
 
 func _process(delta):
   if never_touched:
