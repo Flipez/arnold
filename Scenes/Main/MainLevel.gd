@@ -11,7 +11,7 @@ func _ready():
   $skincover.visible = true
   crateTimer.start()
   var _return = Score.connect("new_score", self, "new_score")
-  $Camera2D/Camera_zoom_in.play("zoom_in_to_game")
+  $AnimationPlayer.play("coming_in")
   Score.score = 0
   $Shitbar/Progress.value = 0
   $Lungbar/Progress.value = 80
@@ -125,3 +125,7 @@ func _on_Camera_zoom_in_animation_finished(anim_name):
     $skincover/AnimationPlayer.play("get_transparent")
   else:
     var _return = get_tree().change_scene("res://Scenes/Lost/Lost.tscn")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+  $Camera2D/Camera_zoom_in.play("zoom_in_to_game")

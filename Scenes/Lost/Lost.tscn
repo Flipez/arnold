@@ -114,7 +114,7 @@ playing = true
 position = Vector2( -12000, 6800 )
 scale = Vector2( 6.67318, 6.50298 )
 frames = SubResource( 10 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="toilet" type="Sprite" parent="Background"]

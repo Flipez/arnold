@@ -187,22 +187,23 @@ animations = [ {
 script = ExtResource( 1 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 174.462, 119.052 )
-scale = Vector2( 0.116918, 0.117472 )
+position = Vector2( 186.822, 111.636 )
+scale = Vector2( 0.1, 0.12 )
 texture = ExtResource( 6 )
+offset = Vector2( 30, 20 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 158.25, 71.5 )
+position = Vector2( 158.25, 62.5 )
 scale = Vector2( 0.315, 0.315 )
 texture = ExtResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 81.0903, 166.278 )
+position = Vector2( 81.0903, 157.278 )
 scale = Vector2( 0.0701696, 0.0701696 )
 texture = ExtResource( 3 )
 
 [node name="Player1" type="Node2D" parent="."]
-position = Vector2( 151.602, 162.165 )
+position = Vector2( 151.602, 153.165 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player1"]
 position = Vector2( 0, -16 )
@@ -238,7 +239,7 @@ __meta__ = {
 }
 
 [node name="Player2" type="Node2D" parent="."]
-position = Vector2( 230.068, 162.796 )
+position = Vector2( 230.068, 153.796 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player2"]
 position = Vector2( 0, -16 )
@@ -261,9 +262,9 @@ frames = SubResource( 30 )
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 119.414
-margin_top = 223.17
+margin_top = 219.17
 margin_right = 449.414
-margin_bottom = 292.17
+margin_bottom = 288.17
 rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -282,9 +283,9 @@ playing = true
 
 [node name="Label" type="Label" parent="."]
 margin_left = 205.682
-margin_top = 198.261
+margin_top = 189.261
 margin_right = 386.682
-margin_bottom = 224.261
+margin_bottom = 215.261
 rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -301,9 +302,9 @@ frames = SubResource( 33 )
 
 [node name="Player 2" type="Label" parent="."]
 margin_left = 216.25
-margin_top = 128.25
+margin_top = 119.25
 margin_right = 305.25
-margin_bottom = 161.25
+margin_bottom = 152.25
 rect_scale = Vector2( 0.4, 0.4 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -316,9 +317,9 @@ __meta__ = {
 
 [node name="Player 1" type="Label" parent="."]
 margin_left = 139.25
-margin_top = 127.25
+margin_top = 118.25
 margin_right = 223.25
-margin_bottom = 160.25
+margin_bottom = 151.25
 rect_scale = Vector2( 0.4, 0.4 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
