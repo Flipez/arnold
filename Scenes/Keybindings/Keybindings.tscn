@@ -193,7 +193,7 @@ animations = [ {
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 171.758, 126.203 )
+position = Vector2( 181.878, 125.409 )
 rotation = 0.371637
 scale = Vector2( 0.288456, 444.861 )
 texture = SubResource( 2 )
@@ -209,8 +209,7 @@ scale = Vector2( 0.0701696, 0.0701696 )
 texture = ExtResource( 3 )
 
 [node name="Player1" type="Node2D" parent="."]
-position = Vector2( 151.182, 176.25 )
-rotation = -0.523599
+position = Vector2( 151.602, 162.165 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player1"]
 position = Vector2( 0, -16 )
@@ -228,12 +227,25 @@ position = Vector2( 16, 0 )
 frames = SubResource( 14 )
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Player1"]
-position = Vector2( 40, 0 )
+position = Vector2( -0.337, 20 )
 frames = SubResource( 17 )
 
+[node name="Label2" type="Label" parent="Player1"]
+margin_left = 24.5732
+margin_top = 16.9921
+margin_right = 125.573
+margin_bottom = 42.9921
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Hold to grab"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player2" type="Node2D" parent="."]
-position = Vector2( 222.5, 176.25 )
-rotation = -0.523599
+position = Vector2( 230.068, 162.796 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player2"]
 position = Vector2( 0, -16 )
@@ -251,7 +263,7 @@ position = Vector2( 16, 0 )
 frames = SubResource( 29 )
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Player2"]
-position = Vector2( 40, 0 )
+position = Vector2( -0.301, 20 )
 frames = SubResource( 32 )
 
 [node name="Label2" type="Label" parent="."]
@@ -275,10 +287,10 @@ frames = SubResource( 32 )
 playing = true
 
 [node name="Label" type="Label" parent="."]
-margin_left = 203.946
-margin_top = 197.354
-margin_right = 443.946
-margin_bottom = 266.354
+margin_left = 205.682
+margin_top = 198.261
+margin_right = 386.682
+margin_bottom = 224.261
 rect_scale = Vector2( 0.3, 0.3 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
